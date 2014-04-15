@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WikiNow</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />  
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
+    <script src="js/getJsonp.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+        <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    
+    <script type="text/javascript">  
+      var JSONP=document.createElement("script");  
+      JSONP.type="text/javascript";  
+      JSONP.src="http://en.wikipedia.org/w/api.php?format=json&action=query&list=querypage&qppage=Mostrevisions&qplimit=20&callback=getTitle";  
+    document.getElementsByTagName("head")[0].appendChild(JSONP);  
+    </script>  
+  </head>
+  <body>
+    <h1 class = "text-center">Most Revisions</h1>
+    <p class = "text-center" id = "time_stamp"></p>
+    <div id="content" class="container" style="display: none;">
+      <li><a href="" id = "1" target = "_blank"></a>  <small id ="21"></small></li>
+      <p class="text-muted" id = "11"></p>
+      <br>
+      <li><a href="" id = "2" target = "_blank"></a>  <small id ="22"></small></li>
+      <p class="text-muted" id = "12"></p>
+      <br>
+      <li><a href="" id = "3" target = "_blank"></a>  <small id ="23"></small></li>
+      <p class="text-muted" id = "13"></p>
+      <br>
+      <li><a href="" id = "4" target = "_blank"></a>  <small id ="24"></small></li>
+      <p class="text-muted" id = "14"></p>
+      <br>
+      <li><a href="" id = "5" target = "_blank"></a>  <small id ="25"></small></li>
+      <p class="text-muted" id = "15"></p>
+      <br>
+      <li><a href="" id = "6" target = "_blank"></a>  <small id ="26"></small></li>
+      <p class="text-muted" id = "16"></p>
+      <br>
+      <li><a href="" id = "7" target = "_blank"></a>  <small id ="27"></small></li>
+      <p class="text-muted" id = "17"></p>
+      <br>
+      <li><a href="" id = "8" target = "_blank"></a>  <small id ="28"></small></li>
+      <p class="text-muted" id = "18"></p>
+      <br>
+      <li><a href="" id = "9" target = "_blank"></a>  <small id ="29"></small></li>
+      <p class="text-muted" id = "19"></p>
+      <br>
+      <li><a href="" id = "10" target = "_blank"></a>  <small id ="30"></small></li>
+      <p class="text-muted" id = "20"></p>
+      <br>
+    </div>
+
+      <button type="button" class="btn btn-warning" onclick=previousPage() style="color:#333; background-color:#fff; border-color:#ccc; margin-left:45%">Prev</button>
+      <button type="button" class="btn btn-default" onclick=nextPage()>Next</button>
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  </body>
+</html>
