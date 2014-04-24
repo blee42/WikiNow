@@ -2,10 +2,10 @@ import urllib2;
 from bs4 import BeautifulSoup
 
 # https://en.wikipedia.org/wiki/Wikipedia:Top25Report
-#response = urllib2.urlopen('https://en.wikipedia.org/wiki/Wikipedia:Top25Report');
+response = urllib2.urlopen('https://en.wikipedia.org/wiki/Wikipedia:Top25Report');
 #response = urllib2.urlopen('https://en.wikipedia.org/wiki/Wikipedia:Top_25_Report/March_30_to_April_5,_2014');
 #response = urllib2.urlopen('https://en.wikipedia.org/wiki/Wikipedia:Top_25_Report/March_23_to_30,_2014');
-response = urllib2.urlopen('https://en.wikipedia.org/wiki/Wikipedia:Top_25_Report/March_23_to_30,_2014');
+#response = urllib2.urlopen('https://en.wikipedia.org/wiki/Wikipedia:Top_25_Report/March_23_to_30,_2014');
 html = response.read();
 soup = BeautifulSoup(html);
 #print(soup.prettify());

@@ -16,14 +16,14 @@ subtable = table_array[2].find_all('table', 'vevent');
 # for stable in subtable:
 # 	print;
 # 	print stable;
-print "~~~~~~~~~~~~";
-print subtable[0];
+#print "~~~~~~~~~~~~";
+#print subtable[0];
 target_table = subtable[0];
 target_td = target_table.find_all('td', 'description');
 #print target_td;
 target_td = target_td[0];
-print target_td.prettify();
-print;
+#print target_td.prettify();
+#print;
 sub_dl = target_td.find_all('dl');
 dl = [];
 topics = {};
@@ -31,8 +31,8 @@ count = 0;
 for sub in sub_dl:
 	content = [];
 	dl.append(sub.dt.string);
-	print;
-	print sub.dt.string;
+	#print;
+	#print sub.dt.string;
 	sub_ul = sub.next_sibling.next_sibling;
 
 	# add integrated href
