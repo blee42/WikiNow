@@ -18,13 +18,13 @@ README is for the created project.
 ###DEVELOPMENT
     
     # Change into project directory
-    cd <project_name>
+    cd wikinow
     
     # Make virtual environment
-    mkvirtualenv <project_name>
+    mkvirtualenv wikinow
     
     # Activate virtual environment
-    workon <project_name>
+    workon wikinow
     
     # Install requirements
     pip install -r requirements.txt
