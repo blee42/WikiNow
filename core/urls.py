@@ -13,5 +13,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^test/', 'pages.views.test', name='test'),
     url(r'^current/', 'pages.views.current', name='current'),
+    url(r'^week/', 'pages.views.week', name='week'),
     url(r'^pages/', 'pages.views.pages', name='pages')
 )

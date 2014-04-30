@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Page
-import grab_top25, grab_current
+import grab_top25, grab_current, risingweekly
 #import sys.path.append('../wikinow/grab_content/grab_current.py')
 
 def pages(request):
@@ -16,3 +16,7 @@ def test(request):
 def current(request):
 	outcome = grab_current.current()
 	return render(request, "test_current.html", locals())
+
+def week(request):
+	result = risingweekly.week()
+	return render(request, "week.html", locals())

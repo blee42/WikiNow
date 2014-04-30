@@ -19,7 +19,7 @@ def current():
 	# 	print stable;
 	#print "~~~~~~~~~~~~";
 	#print subtable[0];
-	target_table = subtable[0];
+	target_table = subtable[1];
 	target_td = target_table.find_all('td', 'description');
 	#print target_td;
 	target_td = target_td[0];
