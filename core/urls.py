@@ -11,5 +11,7 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^$', TemplateView.as_view(template_name='base.html')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^test/', 'pages.views.test', name='test'),
+    url(r'^current/', 'pages.views.current', name='current'),
     url(r'^pages/', 'pages.views.pages', name='pages')
 )

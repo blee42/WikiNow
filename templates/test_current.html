@@ -1,0 +1,92 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{% block title %}WikiNow{% endblock %}</title>
+  <!-- IE -->
+  <!-- <link rel="shortcut icon" type="image/x-icon" href="http://blueline.knightlab.com/assets/logos/favicon.ico" /> -->
+  <!-- other browsers -->
+  <!-- <link rel="icon" type="image/x-icon" href="http://blueline.knightlab.com/assets/logos/favicon.ico" /> -->
+  <!-- Optional: Knight Lab webfonts -->
+  <link href="//cloud.webtype.com/css/d4767ecb-457a-4677-8761-72f890add836.css" rel="stylesheet" type="text/css">
+  <!-- Note: You must include the Blueline CDN stylesheet -->
+  <link rel="stylesheet" href="//cdn.knightlab.com/libs/blueline/latest/css/blueline.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+  {# Google Analytics: don't mess with this stuff #}
+  {# named tracker notes from https://developers.google.com/analytics/devguides/collection/gajs/ #}
+  {# multi-domain tracking notes from https://developers.google.com/analytics/devguides/collection/gajs/gaTrackingSite #}
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(
+            function() {
+                var pageTracker = _gat._createTracker('UA-27829802-1', 'knightlabTracker');
+             },
+            ['knightlabTracker._setDomainName', 'knightlab.com'] // DON'T CHANGE THIS FOR SUBDOMAINS
+            ['knightlabTracker._setAllowLinker', true],
+            ['knightlabTracker._trackPageview']
+  );
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script>
+  {# End Google Analytics #}
+  {% block extrahead %}{% endblock %}
+</head>
+<body>
+
+  <!-- BEGIN HEADER -->
+
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+        <a href="#" class="brand">WikiNow-current</a>
+        <div class="nav-collapse navbar-responsive-collapse collapse" style="height: 0px;">
+          <ul class="nav">
+            <!-- <li><a href="#">Link</a></li> 
+            <li><a href="#">Link</a></li> 
+            <li><a href="#">Link</a></li> 
+            <li><a href="#">Link</a></li>  -->
+          </ul>
+          <ul class="nav pull-right">
+          </ul>
+        </div><!-- /.nav-collapse -->
+      </div>
+    </div><!-- /navbar-inner -->
+  </div>
+  <!-- END HEADER -->
+
+  <!-- BEGIN CONTENT -->
+
+  <div id="content" class="container">
+  	<h2 style="text-align: center;">Current Events</h2>
+
+  	<!--{% for i in outcome %}
+      <h2>{{ i.title }}</h2>
+      {{ i.notes.0 | safe}}
+  	{% endfor %}
+    -->
+
+    <h2> {{ outcome.0.title }}</h2>
+    {{outcome.0.notes.0.1 | safe}}
+
+  {% block content %}
+  {% endblock %}
+  </div>
+  <!-- END CONTENT-->
+
+  <!-- BEGIN FOOTER -->
+  <!-- END FOOTER -->
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//cdn.knightlab.com/libs/blueline/latest/js/blueline.min.js"></script>
+  <script src="{{ STATIC_URL }}js/getJsonp.js"></script>
+  {% block extrascripts %}{% endblock %}
+</body>
+</html>

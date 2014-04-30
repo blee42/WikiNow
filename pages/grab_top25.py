@@ -17,7 +17,7 @@ def grab_25():
 
 	# summary
 	p_array = soup.find_all('p');
-	summary = p_array[1];
+	summary = p_array[1].get_text();
 	#print summary;
 
 	#previous link
@@ -26,10 +26,7 @@ def grab_25():
 	#print previous;
 
 	# table
-	titles = [];
-	links = [];
-	views = [];
-	notes = [];
+	content = [];
 
 	table_array = soup.find_all('table', 'wikitable');
 	table = table_array[0];
@@ -48,22 +45,24 @@ def grab_25():
 	#print current_children[7].i.string;
 
 	for i in range(1, 26):
+		result = {};
+		result['ranks'] = i;
 		#print tr_array[i];
 		# store views:
 		current_view = tr_array[i].find_all('td', align="right");
-		views.append(current_view[0].string);
+		result['views'] = current_view[0].string;
 
 		# store title:
 		if tr_array[i].contents[7].a.string:
 			#print i, "     ", tr_array[i].contents[7].a.string;
-			titles.append(tr_array[i].contents[7].a.string);
+			result['titles'] = tr_array[i].contents[7].a.string;
 		else:
 			#print i, "     ", tr_array[i].contents[7].i.string;
-			titles.append(tr_array[i].contents[7].i.string);
+			result['titles'] = tr_array[i].contents[7].i.string;
 			
 		# store links:
 		current_link = "https://en.wikipedia.org" + tr_array[i].contents[7].a.get('href');
-		links.append(current_link);
+		result['links'] = current_link;
 		#print current_link;
 
 		# store notes:
@@ -77,18 +76,7 @@ def grab_25():
 			#print tag['href'];
 
 		#print tr_array[i].contents[-2];
-		notes.append(tr_array[i].contents[-2]);
+		result['notes'] = tr_array[i].contents[-2].get_text();
 		#tr_array[i].contents[-2].href = "https://en.wikipedia.org" + 
-
-	print headline;
-	print previous;
-	print summary;
-
-	for i in range (0, 25):
-		print "rank: ", i + 1;
-		print "title: ", titles[i];
-		print "views: ", views[i];
-		print "link: ", links[i];
-		print "notes: ", notes[i];
-		print;
-	return (headline, summary, titles, views, links, notes)
+		content.append(result);
+	return (headline, previous, summary, content)
