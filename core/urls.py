@@ -14,5 +14,6 @@ urlpatterns = patterns('',
     url(r'^test/', 'pages.views.test', name='test'),
     url(r'^current/', 'pages.views.current', name='current'),
     url(r'^week/', 'pages.views.week', name='week'),
-    url(r'^pages/', 'pages.views.pages', name='pages')
+    url(r'^pages/', 'pages.views.pages', name='pages'),
+    url(r'^daily/', 'pages.views.daily', name='daily')
 )
