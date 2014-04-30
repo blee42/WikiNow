@@ -3,10 +3,12 @@
 {% block content %}
   	<h2 style="text-align: center;">{{headline}}</h2>
   	<div style="width:100%">
-  	<a href=# style="left:0px;"><- Last week's report</a>
-  	<a href=# style="float:right">Next week's report -></a>
+  	<a href=# style="left:0px;">Last week's report</a>
+  	<a href=# style="float:right">Next week's report</a>
   </div>
-  	<h4>{{summary}}</h4>
+  <br>
+  	<p>{{summary}}</p>
+  <br>
 
   	{% for i in content %}
   	<p>{{ i.ranks }}.<a href={{ i.links }}>{{ i.titles }}</a> (views: {{i.views}})</p>
