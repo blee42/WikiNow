@@ -21,7 +21,8 @@ README is for the created project.
     cd wikinow
     
     # Make virtual environment
-    mkvirtualenv wikinow
+	(source "/usr/local/bin/virtualenvwrapper.sh") 
+	mkvirtualenv wikinow
     
     # Activate virtual environment
     workon wikinow

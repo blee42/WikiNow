@@ -11,10 +11,24 @@
   <br>
 
   	{% for i in content %}
-  	<p>{{ i.ranks }}.<a href={{ i.links }}>{{ i.titles }}</a> (views: {{i.views}})</p>
-  	<p>{{ i.notes}}</p>
+  	  <p>{{ i.ranks }}.<a href={{ i.links }} class="title">{{ i.titles }}</a> (views: {{i.views}})</p>
+  	  <p>{{ i.notes}}</p>
+      <p>on google: </p>
+      <ul>
+      {% for y in i.external %}
+        <li><a href={{ y.external_link }} target=_blank class="external">{{ y.external_title }}</a></li>
+      {% endfor %}
+      </ul>
   	{% endfor %}
 
+    <!--
+    {% for x in external %}
+    <p>on google: </p>
+      {% for y in x %}
+        <a href={{ y.external_link }}>{{ y.external_title }}</a>
+      {% endfor %}
+    {% endfor %}
+    -->
 {% endblock %}
 
 {% block extrascripts %}

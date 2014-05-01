@@ -56,9 +56,11 @@ def grab_25():
 		if tr_array[i].contents[7].a.string:
 			#print i, "     ", tr_array[i].contents[7].a.string;
 			result['titles'] = tr_array[i].contents[7].a.string;
+			#result['external'] = getLinks(tr_array[i].contents[7].a.string);
 		else:
 			#print i, "     ", tr_array[i].contents[7].i.string;
 			result['titles'] = tr_array[i].contents[7].i.string;
+			#result['external'] = getLinks(tr_array[i].contents[7].a.string);
 			
 		# store links:
 		current_link = "https://en.wikipedia.org" + tr_array[i].contents[7].a.get('href');
@@ -80,3 +82,32 @@ def grab_25():
 		#tr_array[i].contents[-2].href = "https://en.wikipedia.org" + 
 		content.append(result);
 	return (headline, previous, summary, content)
+
+def getLinks(str):
+	url = 'https://news.google.com/news/feeds?q=' + str + '&num=3&output=rss'
+	# turn space into '%20', only turn it in here, cannot turn it before this function and pass through parameter
+	url = url.replace(' ', '%20')
+	print url
+	#rul = 'https://news.google.com/news/feeds?q=Snoop%20Dogg&num=3&output=rss'
+	response = urllib2.urlopen(url)
+	html = response.read()
+	soup = BeautifulSoup(html)
+	#print(soup.prettify())
+	items = soup.find_all('item')
+	result = [];
+	for x in items:
+		pairs = {}
+		# find titles
+		titles_array = x.find_all('title')
+		pairs['external_title'] = titles_array[0].string
+		#titles.append(titles_array[0].string)
+		#print titles_array[0].string
+
+		# find links
+		links_array = x.find_all('link')
+		pairs['external_link'] = links_array[0].string
+		#links.append(links_array[0].string)
+		#print links_array[0].string
+		result.append(pairs)
+	print result
+	return (result)

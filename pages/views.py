@@ -8,6 +8,8 @@ def pages(request):
 
 def test(request):
 	headline, previous, summary, content = grab_top25.grab_25()
+	for x in content:
+		x['external'] = (grab_top25.getLinks(x['titles']))
 	return render(request, "test.html", locals())
 
 def current(request):
