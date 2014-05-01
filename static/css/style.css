@@ -1,1 +1,9 @@
 /* base styles go here */
+
+.container {
+	max-width: 900px;
+}
+
+.brand {
+	padding: 15px 30px 15px 550px !important;	
+}

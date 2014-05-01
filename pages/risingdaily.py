@@ -33,8 +33,11 @@ def daily():
 		result['urls'] = link
 		#print 'view increase: ' + stat[0]
 		result['views'] = stat[0]
-		#print 'summary: ' + summary_content[0]
-		result['summary'] = summary_content[0]
+		# print 'summary: ' + summary_content[]
+		if (len(summary_content) != 0):
+			result['summary'] = summary_content[0]
+		else:
+			result['summary'] = "Summary not available"
 		#print
 		count = count + 1
 		content.append(result)
