@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<h2 style="text-align: center;">Most visited on English Wikipedia this week</h2>
+	<h2 style="text-align: center;">Rising Articles for This Week</h2>
 	{% for i in result %}
 	 <p>{{ i.ranks }}.<a href={{ i.urls }}>{{ i.titles }}</a> (views: {{i.views}})</p>
 	 <p>{{ i.summary}}</p>
