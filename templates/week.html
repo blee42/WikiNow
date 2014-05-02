@@ -5,6 +5,12 @@
 	{% for i in result %}
 	 <p>{{ i.ranks }}.<a href={{ i.urls }}>{{ i.titles }}</a> (views: {{i.views}})</p>
 	 <p>{{ i.summary}}</p>
+	 <p>on google: </p>
+      <ul>
+      {% for y in i.external %}
+        <li><a href={{ y.external_link }} target=_blank class="external">{{ y.external_title }}</a></li>
+      {% endfor %}
+      </ul>
 	{% endfor %}
 {% endblock %}
   

@@ -18,8 +18,12 @@ def current(request):
 
 def week(request):
 	result = risingweekly.week()
+	for x in result:
+		x['external'] = (grab_top25.getLinks(x['titles']))
 	return render(request, "week.html", locals())
 
 def daily(request):
 	result = risingdaily.daily()
+	for x in result:
+		x['external'] = (grab_top25.getLinks(x['titles']))
 	return render(request, "daily.html", locals())
