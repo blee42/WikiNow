@@ -13,6 +13,7 @@
   	{% for i in content %}
   	  <p>{{ i.ranks }}.<a href={{ i.links }} class="title">{{ i.titles }}</a> (views: {{i.views}})</p>
   	  <p>{{ i.notes}}</p>
+      <img src="{{ i.img}} ">
       <p>on google: </p>
       <ul>
       {% for y in i.external %}
