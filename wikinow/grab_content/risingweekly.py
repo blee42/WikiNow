@@ -23,35 +23,50 @@ for x in range(0, 10):
 	summary = soup3_5[x]
 	summary_content = summary.contents
 
+	#find image link
+	img_response = urllib2.urlopen(link)
+	html = img_response.read()
+	img_soup = BeautifulSoup(html)
+	img_soup2 = img_soup.find('table', {'class': 'infobox'})
+	if (img_soup2):
+		img_soup3 = img_soup2.find_all('img')
+		if (len(img_soup3) != 0):
+			img_link = img_soup3[0].get('src')
+			# print img_link
+		else:
+			print "No image in info box"
+	else:
+		print "No info box"
+
 	# find Wikipedia image url for each article
 
 	# ISSUE: pulls the first image in list and sometimes that is or representative of the article
 	# Ex. image is of a Wikimedia logo
 	# ISSUE: when the article has no images
 	
-	find_image = 'http://en.wikipedia.org/w/api.php?&format=json&action=query&titles=' + urllib2.quote(title[0]) + '&prop=images'
-	result = urllib2.urlopen(find_image)
-	json_data = json.loads(result.read())
-	data = json_data[u'query'][u'pages']
-	pageid = data.keys()[0]
-	image_data = data[pageid][u'images'][0]
-	# print
-	# print image_data
-	# print
-	image_title = image_data[u'title']
+	# find_image = 'http://en.wikipedia.org/w/api.php?&format=json&action=query&titles=' + urllib2.quote(title[0]) + '&prop=images'
+	# result = urllib2.urlopen(find_image)
+	# json_data = json.loads(result.read())
+	# data = json_data[u'query'][u'pages']
+	# pageid = data.keys()[0]
+	# image_data = data[pageid][u'images'][0]
+	# # print
+	# # print image_data
+	# # print
+	# image_title = image_data[u'title']
 
-	find_url = 'http://en.wikipedia.org/w/api.php?format=json&action=query&titles=' + urllib2.quote(image_title) + '&prop=imageinfo&iiprop=url'
-	result = urllib2.urlopen(find_url)
-	json_data = json.loads(result.read())
-	data = json_data[u'query'][u'pages']
-	imageid = data.keys()[0]
-	image_url = data[imageid][u'imageinfo'][0][u'url']
-	print image_url
+	# find_url = 'http://en.wikipedia.org/w/api.php?format=json&action=query&titles=' + urllib2.quote(image_title) + '&prop=imageinfo&iiprop=url'
+	# result = urllib2.urlopen(find_url)
+	# json_data = json.loads(result.read())
+	# data = json_data[u'query'][u'pages']
+	# imageid = data.keys()[0]
+	# image_url = data[imageid][u'imageinfo'][0][u'url']
+	# print image_url
 	
 	print 'rank: ' + str(count)
 	print 'title: ' + title[0]
 	print 'url: ' + link
-	print 'image url: ' + image_url
+	print 'image url: ' + img_link[2:]
 	print 'view increase: ' + stat[0]
 	print 'summary: ' + summary_content[0]
 	print

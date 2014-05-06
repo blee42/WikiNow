@@ -24,6 +24,23 @@ def daily():
 
 		summary = soup3_5[x]
 		summary_content = summary.contents
+
+		#find image link
+		img_response = urllib2.urlopen(link)
+		html = img_response.read()
+		img_soup = BeautifulSoup(html)
+		img_soup2 = img_soup.find('table', {'class': 'infobox'})
+		if (img_soup2):
+			img_soup3 = img_soup2.find_all('img')
+			if (len(img_soup3) != 0):
+				img_link = img_soup3[0].get('src')
+				result['img'] = 'http://' + img_link[2:]
+			else:
+				# print "No image in info box"
+				result['img'] = "No image available"
+		else:
+			# print "No info box"
+			result['img'] = "No image available"
 		
 		#print 'rank: ' + str(count)
 		result['ranks'] = str(count)
@@ -46,6 +63,7 @@ def daily():
 		print x['ranks']
 		print x['titles']
 		print x['urls']
+		print x['img']
 		print x['views']
 		print x['summary']
 	return content
