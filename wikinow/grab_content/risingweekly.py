@@ -31,12 +31,13 @@ for x in range(0, 10):
 	if (img_soup2):
 		img_soup3 = img_soup2.find_all('img')
 		if (len(img_soup3) != 0):
-			img_link = img_soup3[0].get('src')
+			img_link = img_soup3[0].get('src')[2:]
 			# print img_link
 		else:
 			print "No image in info box"
 	else:
-		print "No info box"
+		print "no info box"
+		img_link = img_soup.find_all('img')[0].get('src')[2:]
 
 	# find Wikipedia image url for each article
 
@@ -66,7 +67,7 @@ for x in range(0, 10):
 	print 'rank: ' + str(count)
 	print 'title: ' + title[0]
 	print 'url: ' + link
-	print 'image url: ' + img_link[2:]
+	print 'image url: ' + img_link
 	print 'view increase: ' + stat[0]
 	print 'summary: ' + summary_content[0]
 	print

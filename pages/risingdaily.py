@@ -40,7 +40,8 @@ def daily():
 				result['img'] = "No image available"
 		else:
 			# print "No info box"
-			result['img'] = "No image available"
+			img_link = img_soup.find_all('img')[0].get('src')
+			result['img'] = 'http://' + img_link[2:]
 		
 		#print 'rank: ' + str(count)
 		result['ranks'] = str(count)
