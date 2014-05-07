@@ -106,7 +106,7 @@ def getLinks(str):
 	url = 'https://news.google.com/news/feeds?q=' + str + '&num=3&output=rss'
 	# turn space into '%20', only turn it in here, cannot turn it before this function and pass through parameter
 	url = url.replace(' ', '%20')
-	print url
+	# print url
 	#rul = 'https://news.google.com/news/feeds?q=Snoop%20Dogg&num=3&output=rss'
 	response = urllib2.urlopen(url)
 	html = response.read()
@@ -128,5 +128,5 @@ def getLinks(str):
 		#links.append(links_array[0].string)
 		#print links_array[0].string
 		result.append(pairs)
-	print result
+	# print result
 	return (result)

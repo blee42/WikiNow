@@ -38,9 +38,9 @@ def current():
 		#print sub.dt.string;
 		sub_ul = sub.next_sibling.next_sibling;
 		# sub is title
-		print "sub begin!!!!!!!!"
-		print sub.dt.string;
-		print "sub end!!!!!!!!"
+		# print "sub begin!!!!!!!!"
+		# print sub.dt.string;
+		# print "sub end!!!!!!!!"
 		# add integrated href
 		#for current_a in sub_ul.find_all('a'):
 		#	tag = current_a;
@@ -64,9 +64,9 @@ def current():
 
 	#print topics;
 	#print "~~~~~~~~";
-	for a in content:
-		print a['title']
-		print a['notes']
+	# for a in content:
+	# 	print a['title']
+	# 	print a['notes']
 
 	return content
 #print topics

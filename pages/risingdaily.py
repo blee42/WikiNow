@@ -9,7 +9,7 @@ def daily():
 	# print soup2
 	soup3 = soup.find_all('h3')
 	soup3_5 = soup.find_all('div', {'class': 'summary'})
-	print soup3_5
+	# print soup3_5
 	content = [];
 	count = 1
 
@@ -60,13 +60,13 @@ def daily():
 		count = count + 1
 		content.append(result)
 
-	for x in content:
-		print x['ranks']
-		print x['titles']
-		print x['urls']
-		print x['img']
-		print x['views']
-		print x['summary']
+	# for x in content:
+	# 	print x['ranks']
+	# 	print x['titles']
+	# 	print x['urls']
+	# 	print x['img']
+	# 	print x['views']
+	# 	print x['summary']
 	return content
 
 
