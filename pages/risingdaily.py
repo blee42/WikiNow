@@ -9,7 +9,7 @@ def daily():
 	# print soup2
 	soup3 = soup.find_all('h3')
 	soup3_5 = soup.find_all('div', {'class': 'summary'})
-	print soup3_5
+	# print soup3_5
 	content = [];
 	count = 1
 
