@@ -60,13 +60,13 @@ def daily():
 		count = count + 1
 		content.append(result)
 
-	for x in content:
-		print x['ranks']
-		print x['titles']
-		print x['urls']
-		print x['img']
-		print x['views']
-		print x['summary']
+	# for x in content:
+	# 	print x['ranks']
+	# 	print x['titles']
+	# 	print x['urls']
+	# 	print x['img']
+	# 	print x['views']
+	# 	print x['summary']
 	return content
 
 

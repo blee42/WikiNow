@@ -55,13 +55,14 @@ def grab_25():
 		# store title:
 		if tr_array[i].contents[7].a.string:
 			#print i, "     ", tr_array[i].contents[7].a.string;
-			result['titles'] = tr_array[i].contents[7].a.string;
+			current_title = tr_array[i].contents[7].a.string;
 			#result['external'] = getLinks(tr_array[i].contents[7].a.string);
 		else:
 			#print i, "     ", tr_array[i].contents[7].i.string;
-			result['titles'] = tr_array[i].contents[7].i.string;
+			current_title = tr_array[i].contents[7].i.string;
 			#result['external'] = getLinks(tr_array[i].contents[7].a.string);
-			
+		
+		result['titles'] = current_title
 		# store links:
 		current_link = "https://en.wikipedia.org" + tr_array[i].contents[7].a.get('href');
 		result['links'] = current_link;
@@ -98,7 +99,10 @@ def grab_25():
 
 		#print tr_array[i].contents[-2];
 		result['notes'] = tr_array[i].contents[-2].get_text();
-		#tr_array[i].contents[-2].href = "https://en.wikipedia.org" + 
+
+		# add external links
+		result['external'] = (getLinks(current_title))
+		
 		content.append(result);
 	return (headline, previous, summary, content)
 
@@ -106,7 +110,7 @@ def getLinks(str):
 	url = 'https://news.google.com/news/feeds?q=' + str + '&num=3&output=rss'
 	# turn space into '%20', only turn it in here, cannot turn it before this function and pass through parameter
 	url = url.replace(' ', '%20')
-	print url
+	#print url
 	#rul = 'https://news.google.com/news/feeds?q=Snoop%20Dogg&num=3&output=rss'
 	response = urllib2.urlopen(url)
 	html = response.read()
@@ -128,5 +132,5 @@ def getLinks(str):
 		#links.append(links_array[0].string)
 		#print links_array[0].string
 		result.append(pairs)
-	print result
+	#print result
 	return (result)

@@ -64,9 +64,9 @@ def current():
 
 	#print topics;
 	#print "~~~~~~~~";
-	for a in content:
-		print a['title']
-		print a['notes']
+	# for a in content:
+	# 	print a['title']
+	# 	print a['notes']
 
 	return content
 #print topics
