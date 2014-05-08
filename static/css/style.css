@@ -1,12 +1,50 @@
 /* base styles go here */
 
-.container {
+/*.container {
 	max-width: 900px;
+}*/
+
+/*navbar*/
+
+.navbar-inner {
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	border: 0px;
+	background-color: #fff;
+	background-image: none;
 }
 
+
+/*.container {
+	max-width: 900px;
+}*/
+
 .brand {
-	padding: 15px 30px 15px 550px !important;	
+	padding: 50px 10px 50px 55px !important;
 }
 li a {
 	font-size: 10px;
+}
+
+/*left rail*/
+.ranking {
+	background-color: red;
+	width: 30%;
+	height: 500px;
+	margin: 0 50px 0 0;
+	float: left;
+}
+
+/*main*/
+
+.main {
+	background-color: green;
+	width: 65%;
+	height: 500px;
+	float: left;
+}
+
+.img > img {
+	position: absolute;
+	clip: rect(0px,500px,400pxt,0px);
 }
