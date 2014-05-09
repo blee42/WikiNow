@@ -1,4 +1,5 @@
 import urllib2, re
+import xml.etree.ElementTree as ET
 from bs4 import BeautifulSoup
 
 def daily():

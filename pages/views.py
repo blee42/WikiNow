@@ -25,6 +25,5 @@ def week(request):
 def daily(request):
 	result = risingdaily.daily()
 	for x in result:
-		print x['titles']
 		x['external'] = (grab_top25.getLinks(x['titles']))
 	return render(request, "daily.html", locals())
