@@ -16,5 +16,6 @@ urlpatterns = patterns('',
     url(r'^current/', 'pages.views.current', name='current'),
     url(r'^week/', 'pages.views.week', name='week'),
     url(r'^pages/', 'pages.views.pages', name='pages'),
-    url(r'^daily/', 'pages.views.daily', name='daily')
+    url(r'^daily/', 'pages.views.daily', name='daily'),
+    url(r'^monthly/', 'pages.views.monthly', name='monthly')
 )

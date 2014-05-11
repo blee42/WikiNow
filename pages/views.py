@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Page
-import grab_top25, grab_current, risingweekly, risingdaily
+import grab_top25, grab_current, risingweekly, risingdaily, risingmonthly
 #import sys.path.append('../wikinow/grab_content/grab_current.py')
 
 def pages(request):
@@ -27,3 +27,9 @@ def daily(request):
 	for x in result:
 		x['external'] = (grab_top25.getLinks(x['titles']))
 	return render(request, "daily.html", locals())
+
+def monthly(request):
+	result = risingmonthly.month()
+	for x in result:
+		x['external'] = (grab_top25.getLinks(x['titles']))
+	return render(request, "monthly.html", locals())	
