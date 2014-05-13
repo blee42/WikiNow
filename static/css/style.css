@@ -1,8 +1,7 @@
 /* base styles go here */
-
-/*.container {
-	max-width: 900px;
-}*/
+body {
+	font-family: Apres;
+}
 
 /*navbar*/
 
@@ -14,37 +13,105 @@
 	background-image: none;
 }
 
-
-/*.container {
-	max-width: 900px;
-}*/
-
 .brand {
-	padding: 50px 10px 50px 55px !important;
+	padding: 50px 10px 20px 55px !important;
 }
+
 li a {
 	font-size: 10px;
 }
 
+/* main */
+#content {
+	margin-top: 50px;
+}
+
 /*left rail*/
 .ranking {
-	background-color: red;
-	width: 30%;
+	background-color: #F5F6F7;
 	height: 500px;
-	margin: 0 50px 0 0;
-	float: left;
+}
+
+.rank {
+	padding: 10px 0 10px 10px;
+	border: 1px solid #fff;
+}
+
+span.num {
+	font-size: 20px;
+	border: 3px solid #414141;
+	padding: 2px 8px 2px 8px;
+	font-family: Helvetica;
+}
+
+.rank-title > h3 {
+	display: inline;
+	padding: 10px 0 0 15px;
+	font-family: Turnip;
+	font-style: italic;
+	font-size: 30px;
+	line-height: 50px;
+}
+
+.rank-info {
+	margin: -8px 0 0 45px;
+	font-size: 14px;
+	color: #878787;
+}
+
+.active {
+	background-color: #E9EAEB;
 }
 
 /*main*/
 
 .main {
-	background-color: green;
-	width: 65%;
-	height: 500px;
-	float: left;
 }
 
-.img > img {
-	position: absolute;
-	clip: rect(0px,500px,400pxt,0px);
+.main-img {
+	height: 400px;
+	overflow: hidden;
+}
+
+.main-title {
+	margin: 30px 0 30px 0;
+}
+
+.main-title > h3 {
+	display: inline;
+	padding: 0 0 0 15px;
+	font-family: Turnip;
+	font-style: italic;
+	font-size: 35px;
+	line-height: 50px;
+}
+
+.article {
+	margin: 0 0 10px 0;
+	overflow: hidden;
+}
+
+.article-img {
+	height: 40px;
+	max-width: 40px;
+	overflow: hidden;
+}
+
+.article-details {
+	margin: -6px;
+}
+
+.pub {
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0;
+}
+
+p.article-title {
+	margin: -5px 0 0 0;
+}
+
+p.article-date {
+	font-size: 10px;
+	margin-top: -5px;
 }
