@@ -1,4 +1,5 @@
 import urllib2;
+import re
 import xml.etree.ElementTree as ET
 from bs4 import BeautifulSoup
 def grab_25():
@@ -149,6 +150,14 @@ def getLinks(str):
 	soup = ET.fromstring(html)
 	items = soup[0].findall('item')
 	result = []
+	description = items[0][4].text;
+	if re.findall(r"<img src=\"(.+?)\"", description):
+		img_url = "http:" + re.findall(r"<img src=\"(.+?)\"", description)[0]
+	# if there are no image
+	else:
+		img_url = "NO IMAGE"
+	print str
+	print img_url
 	for x in items:
 		pairs = {}
 		pairs['external_title'] = x[0].text
@@ -156,5 +165,6 @@ def getLinks(str):
 		linkset = link.split(r'http://')
 		target_url = r'http://' + linkset[-1]
 		pairs['external_link'] = target_url
+		pairs['external_img'] = img_url
 		result.append(pairs)
 	return (result)
