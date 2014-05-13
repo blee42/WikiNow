@@ -2,8 +2,8 @@ import urllib2, re, json
 import xml.etree.ElementTree as ET
 from bs4 import BeautifulSoup
 
-def week():
-	response = urllib2.urlopen('http://tools.wmflabs.org/wikitrends/english-uptrends-this-week.html')
+def month():
+	response = urllib2.urlopen('http://tools.wmflabs.org/wikitrends/english-uptrends-this-month.html')
 	html = response.read()
 
 	soup = BeautifulSoup(html)

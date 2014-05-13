@@ -1,11 +1,9 @@
 import urllib2;
+import xml.etree.ElementTree as ET
 from bs4 import BeautifulSoup
 def grab_25():
 	# https://en.wikipedia.org/wiki/Wikipedia:Top25Report
 	response = urllib2.urlopen('https://en.wikipedia.org/wiki/Wikipedia:Top25Report');
-	#response = urllib2.urlopen('https://en.wikipedia.org/wiki/Wikipedia:Top_25_Report/March_30_to_April_5,_2014');
-	#response = urllib2.urlopen('https://en.wikipedia.org/wiki/Wikipedia:Top_25_Report/March_23_to_30,_2014');
-	#response = urllib2.urlopen('https://en.wikipedia.org/wiki/Wikipedia:Top_25_Report/March_23_to_30,_2014');
 	html = response.read();
 	soup = BeautifulSoup(html);
 	#print(soup.prettify());
@@ -106,31 +104,57 @@ def grab_25():
 		content.append(result);
 	return (headline, previous, summary, content)
 
+#  use beautifulsoup
+# def getLinks(str):
+# 	str = unicode(str);
+# 	str = str.encode("ascii",'ignore');
+# 	url = 'https://news.google.com/news/feeds?q=' + urllib2.quote(str) + '&num=3&output=rss'
+# 	# turn space into '%20', only turn it in here, cannot turn it before this function and pass through parameter
+# 	#url = url.replace(' ', '%20')
+# 	#rul = 'https://news.google.com/news/feeds?q=Snoop%20Dogg&num=3&output=rss'
+# 	response = urllib2.urlopen(url)
+# 	html = response.read()
+# 	soup = BeautifulSoup(html)
+# 	#print(soup.prettify())
+# 	items = soup.find_all('item')
+# 	result = [];
+# 	for x in items:
+# 		pairs = {}
+# 		# find titles
+# 		titles_array = x.find_all('title')
+# 		pairs['external_title'] = titles_array[0].string
+# 		#titles.append(titles_array[0].string)
+# 		#print titles_array[0].string
+
+# 		# find links
+# 		links_array = x.find_all('link')
+# 		pairs['external_link'] = links_array[0].string
+# 		#links.append(links_array[0].string)
+# 		#print links_array[0].string
+# 		result.append(pairs)
+# 	return (result)
+
+# use elementtree
 def getLinks(str):
+	# ignore special characters
 	str = unicode(str);
 	str = str.encode("ascii",'ignore');
 	url = 'https://news.google.com/news/feeds?q=' + urllib2.quote(str) + '&num=3&output=rss'
+
 	# turn space into '%20', only turn it in here, cannot turn it before this function and pass through parameter
 	#url = url.replace(' ', '%20')
-	#rul = 'https://news.google.com/news/feeds?q=Snoop%20Dogg&num=3&output=rss'
+	
 	response = urllib2.urlopen(url)
 	html = response.read()
-	soup = BeautifulSoup(html)
-	#print(soup.prettify())
-	items = soup.find_all('item')
-	result = [];
+	soup = ET.fromstring(html)
+	items = soup[0].findall('item')
+	result = []
 	for x in items:
 		pairs = {}
-		# find titles
-		titles_array = x.find_all('title')
-		pairs['external_title'] = titles_array[0].string
-		#titles.append(titles_array[0].string)
-		#print titles_array[0].string
-
-		# find links
-		links_array = x.find_all('link')
-		pairs['external_link'] = links_array[0].string
-		#links.append(links_array[0].string)
-		#print links_array[0].string
+		pairs['external_title'] = x[0].text
+		link = x[1].text
+		linkset = link.split(r'http://')
+		target_url = r'http://' + linkset[-1]
+		pairs['external_link'] = target_url
 		result.append(pairs)
 	return (result)

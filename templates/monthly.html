@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h2 style="text-align: center;">Rising Articles for This Month</h2>
+	{% for i in result %}
+	 <p>{{ i.ranks }}.<a href={{ i.urls }}>{{ i.titles }}</a> (views: {{i.views}})</p>
+	 <img src="{{ i.img}} ">
+	 <p>{{ i.summary}}</p>
+	
+	 <p>on google: </p>
+      <ul>
+      {% for y in i.external %}
+        <li><a href={{ y.external_link }} target=_blank class="external">{{ y.external_title }}</a></li>
+      {% endfor %}
+      </ul>
+
+	{% endfor %}
+{% endblock %}
+  
+{% block extrascripts %}{% endblock %}
+
