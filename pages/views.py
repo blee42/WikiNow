@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Page
-import grab_top25, grab_current, risingweekly, risingdaily, risingmonthly, test1
+import grab_top25, grab_current, risingweekly, risingdaily, risingmonthly, test1, wiki_category
 #import sys.path.append('../wikinow/grab_content/grab_current.py')
 
 def pages(request):
@@ -21,8 +21,11 @@ def week(request):
 	for x in result:
 		titles_content = ''
 		x['external'] = (grab_top25.getLinks(x['titles']))
-		#print x['external']
 		array = x['external']
+		
+		# get wikic ategories
+		wiki_category.get_wiki_category(x['titles'],array)
+
 		for y in array:
 			if "..." in y['external_title']:
 				sub_title = y['external_title'].split("...")
