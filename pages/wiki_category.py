@@ -1,8 +1,10 @@
 from nltk.corpus import stopwords
 import urllib2, json, unicodedata
 from pprint import pprint
+import copy
 
 def get_wiki_category(titleArticle, newsArray):
+	print titleArticle
 	titleBag = ''
 	for article in newsArray:
 		title = article['external_title']
@@ -29,29 +31,31 @@ def get_wiki_category(titleArticle, newsArray):
 
 	# get list of wikipedia categories for this title
 	wikiCats = get_category(titleArticle)
-	# # wikiCount = []
-	# print wikiCats
+	wikiCount = []
 
-	# # compare news titles and categories
-	# for category in wikiCats:
-	# 	count = 0
-	# 	print category
-	# 	print
-	# 	for word in category:
-	# 		if word in ntitleBag:
-	# 			print
-	# 			print "found a word"
-	# 			print word
-	# 			print
-	# 			# count = count + 1
-	# 	# if count == 0:
-	# 		# wikiCats.remove(category)
-	# 	# wikiCount.append(count)
+	# compare news titles and categories
+	nwikiCats = []
+	for category in wikiCats:
+		count = 0
+		ncategory = copy.deepcopy(category)
+		catArray = ncategory.split(" ")
+		for i in catArray:
+			if i in ntitleBag:
+				count = count + 1
+				nwikiCats.append(category)
 
-	# # print ntitleBag
-	# # print wikiCats
-	# # print wikiCount
+		if count != 0:
+			wikiCount.append(count)
 
+	if len(wikiCount) == 0:
+		print 'No relevant category found'
+	else:
+		maxCount = 0
+		for count in wikiCount:
+			if count > maxCount:
+				maxCount = count
+		index = wikiCount.index(maxCount)
+		print 'Category: ' + nwikiCats[index]
 
 
 def get_category(title):
@@ -70,9 +74,6 @@ def get_category(title):
 
 	# check if there are more categories
 	cList = get_more_categories(cList, json_data, url)
-	print cList
-
-	
 
 	return cList
 
@@ -83,7 +84,6 @@ def get_more_categories(cList, json_result, url):
 		continueURL = json_result['query-continue']['categories']['clcontinue']
 		nurl = url + '&clcontinue=' + continueURL
 		result = urllib2.urlopen(nurl)
-		print result.read()
 		json_data = json.loads(result.read())
 		data = (json_data['query']['pages'])
 
@@ -96,8 +96,6 @@ def get_more_categories(cList, json_result, url):
 		get_more_categories(cList, json_data, url)
 
 	return cList
-
-
 
 def make_ascii(s):
 	if isinstance(s, str):
