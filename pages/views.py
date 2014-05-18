@@ -23,8 +23,8 @@ def week(request):
 		x['external'] = (grab_top25.getLinks(x['titles']))
 		array = x['external']
 		
-		# get wikic ategories
-		wiki_category.get_wiki_category(x['titles'],array)
+		# get wiki categories
+		x['cat'] = wiki_category.get_wiki_category(x['titles'],array)
 
 		for y in array:
 			if "..." in y['external_title']:
@@ -42,6 +42,10 @@ def daily(request):
 		titles_content = ''
 		x['external'] = (grab_top25.getLinks(x['titles']))
 		array = x['external']
+
+		# get wiki categories
+		x['cat'] = wiki_category.get_wiki_category(x['titles'],array)
+
 		for y in array:
 			if "..." in y['external_title']:
 				sub_title = y['external_title'].split("...")
@@ -58,6 +62,10 @@ def monthly(request):
 		titles_content = ''
 		x['external'] = (grab_top25.getLinks(x['titles']))
 		array = x['external']
+
+		# get wiki categories
+		x['cat'] = wiki_category.get_wiki_category(x['titles'],array)
+
 		for y in array:
 			if "..." in y['external_title']:
 				sub_title = y['external_title'].split("...")

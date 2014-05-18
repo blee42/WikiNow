@@ -48,14 +48,14 @@ def get_wiki_category(titleArticle, newsArray):
 			wikiCount.append(count)
 
 	if len(wikiCount) == 0:
-		print 'No relevant category found'
+		return 'No relevant category found'
 	else:
 		maxCount = 0
 		for count in wikiCount:
 			if count > maxCount:
 				maxCount = count
 		index = wikiCount.index(maxCount)
-		print 'Category: ' + nwikiCats[index]
+		return nwikiCats[index]
 
 
 def get_category(title):
