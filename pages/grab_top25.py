@@ -150,14 +150,17 @@ def getLinks(str):
 	soup = ET.fromstring(html)
 	items = soup[0].findall('item')
 	result = []
-	description = items[0][4].text;
-	if re.findall(r"<img src=\"(.+?)\"", description):
-		img_url = "http:" + re.findall(r"<img src=\"(.+?)\"", description)[0]
-	# if there are no image
+	if (len(items)):
+		description = items[0][4].text;
+		if re.findall(r"<img src=\"(.+?)\"", description):
+			img_url = "http:" + re.findall(r"<img src=\"(.+?)\"", description)[0]
+		# if there are no image
+		else:
+			img_url = "NO IMAGE"
 	else:
 		img_url = "NO IMAGE"
-	print str
-	print img_url
+	#print str
+	#print img_url
 	for x in items:
 		pairs = {}
 		pairs['external_title'] = x[0].text

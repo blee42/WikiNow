@@ -24,7 +24,13 @@ def week():
 		stat = span.contents
 
 		summary = soup3_5[x]
-		summary_content = summary.contents
+		# if no summary
+		if (len(summary.contents) == 0):
+			result['summary'] = ''
+		else:
+			summary_content = summary.contents
+			result['summary'] = summary_content[0]
+
 
 		#find image link
 		link_title = urllib2.quote(title[0])
@@ -45,8 +51,11 @@ def week():
 		result['urls'] = link
 		#print 'view increase: ' + stat[0]
 		result['views'] = stat[0]
-		#print 'summary: ' + summary_content[0]
-		result['summary'] = summary_content[0]
+		# 'summary: ' + summary_content[0]
+		# if (summary_content):
+		# 	result['summary'] = summary_content[0]
+		# else:
+		# 	result['summary'] = ''
 		#print
 		count = count + 1
 		content.append(result)

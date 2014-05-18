@@ -27,7 +27,10 @@ def daily():
 		summary_content = summary.contents
 
 		#find image link
-		link_title = urllib2.quote(title[0])
+		str_title = title[0]
+		str_title = unicode(str_title)
+		str_title = str_title.encode("ascii",'ignore')
+		link_title = urllib2.quote(str_title)
 		iquery = 'http://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=' + link_title
 
 		img_response = urllib2.urlopen(iquery)
@@ -37,15 +40,15 @@ def daily():
 
 		result['img'] = img_url
 		
-		#print 'rank: ' + str(count)
+		print 'rank: ' + str(count)
 		result['ranks'] = str(count)
-		#print 'title: ' + title[0]
+		print 'title: ' + title[0]
 		result['titles'] = title[0]
-		#print 'url: ' + link
+		print 'url: ' + link
 		result['urls'] = link
-		#print 'view increase: ' + stat[0]
+		print 'view increase: ' + stat[0]
 		result['views'] = stat[0]
-		# print 'summary: ' + summary_content[]
+		print 'summary: ' + summary_content[0]
 		if (len(summary_content) != 0):
 			result['summary'] = summary_content[0]
 		else:
