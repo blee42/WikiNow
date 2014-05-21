@@ -1,3 +1,5 @@
+/*54A4DA*/
+
 /* base styles go here */
 body {
 	font-family: Apres;
@@ -6,7 +8,7 @@ body {
 .divider {
 	background-color: #54A4DA;
 	width: 84%;
-	height: 15px;
+	height: 7px;
 	margin: 50px 100px 50px 100px;
 }
 .row-fluid {
@@ -15,6 +17,10 @@ body {
 
 a, a:hover {
 	color: #414141;
+}
+
+hr {
+	border-color: #54A4DA;
 }
 
 /*navbar*/
@@ -34,8 +40,11 @@ a, a:hover {
 .tagline {
 	font-style: italic;
 	color: #B4B5B5;
-	margin: 50px 150px 20px 350px !important;
+	margin: 60px 0px 20px 20px !important;
 	border-bottom: 1px solid #54A4DA;
+	width: 100%;
+	font-size: 16px;
+	padding-right: 515px;
 }
 
 li a {
@@ -53,7 +62,7 @@ li a {
 }
 
 .main-img {
-	height: 380px;
+	height: 420px;
 	overflow: hidden;
 	-moz-box-shadow:    1px 1px 5px 2px #ccc;
   -webkit-box-shadow: 1px 1px 5px 2px #ccc;
@@ -64,14 +73,14 @@ li a {
 	margin: 10px 0 10px 0;
 }
 
-.main-title > h3 {
-	font-family: Turnip;
-	font-style: italic;
-	font-size: 35px;
+.main-title > a > h3 {
+	font-family: Turnip !important;
+	font-style: italic !important;
+	font-size: 35px !important;
 }
 
 .article {
-	margin: 0 0 5px 0;
+	margin: 0 0 8px 0;
 	overflow: hidden;
 }
 
@@ -87,14 +96,14 @@ li a {
 
 .pub {
 	font-size: 12px;
-	font-weight: bold;
+	font-weight: lighter;
 	margin: 0;
 }
 
 p.article-title {
-	font-size: 14px;
-	margin: -3px 0 3px 0;
-	line-height: 16px;
+	font-size: 16px;
+	margin: 0 0 6px 0;
+	line-height: 20px;
 }
 
 p.article-date {
