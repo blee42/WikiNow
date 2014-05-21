@@ -21,12 +21,12 @@ def getCategory(demo_text):
 		#print('## Entities ##')
 		entity = response['entities'][0]
 		#print('text: ', entity['text'].encode('utf-8'))
-		print('type: ', entity['type'])
+		#print('type: ', entity['type'])
 		#print('relevance: ', entity['relevance'])
 
 		if entity.has_key('disambiguated') and entity['disambiguated'].has_key('subType'):
 			category = entity['disambiguated']['subType']
-			print('subType: ', entity['disambiguated']['subType'])
+			#print('subType: ', entity['disambiguated']['subType'])
 		else:
 			category = []
 			category.append(entity['type'])

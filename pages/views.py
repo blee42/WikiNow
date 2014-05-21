@@ -32,7 +32,7 @@ def home(request):
 			elif "-" in y['external_title']:
 				sub_title = y['external_title'].split("-")
 			titles_content = titles_content + sub_title[0].rstrip() + '. '
-		print titles_content
+		#print titles_content
 		x['category'] = (test1.getCategory(titles_content))
 	return render(request, "index.html", locals())
 
@@ -52,7 +52,7 @@ def week(request):
 			elif "-" in y['external_title']:
 				sub_title = y['external_title'].split("-")
 			titles_content = titles_content + sub_title[0].rstrip() + '. '
-		print titles_content
+		#print titles_content
 		x['category'] = (test1.getCategory(titles_content))
 	return render(request, "week.html", locals())
 
@@ -72,7 +72,7 @@ def daily(request):
 			elif "-" in y['external_title']:
 				sub_title = y['external_title'].split("-")
 			titles_content = titles_content + sub_title[0].rstrip() + '. '
-		print x['titles'], titles_content
+		#print x['titles'], titles_content
 		x['category'] = (test1.getCategory(titles_content))
 	return render(request, "daily.html", locals())
 
@@ -92,6 +92,6 @@ def monthly(request):
 			elif "-" in y['external_title']:
 				sub_title = y['external_title'].split("-")
 			titles_content = titles_content + sub_title[0].rstrip() + '. '
-		print titles_content
+		#print titles_content
 		x['category'] = (test1.getCategory(titles_content))
 	return render(request, "monthly.html", locals())	
