@@ -54,3 +54,18 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
+#pyc files
+core/__init__.pyc
+core/settings/__init__.pyc
+core/settings/base.pyc
+core/settings/loc.pyc
+core/urls.pyc
+db
+pages/__init__.pyc
+pages/grab_current.pyc
+pages/grab_top25.pyc
+pages/models.pyc
+pages/risingdaily.pyc
+pages/risingweekly.pyc
+pages/views.pyc
+static/css/style.css
