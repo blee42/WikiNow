@@ -8,17 +8,17 @@
 				<div class="big-box">
 					<div class="main-img"><img src="{{ i.img}}" width="100%"></div>
 					<div class="main-title">
-						<h3>{{ i.titles }}</h3>
-						<p class="views">{{ i.views }}</p>
+						<a href={{ i.urls }}><h3>{{ i.titles }}</h3></a>
+<!-- 						<p class="views">{{ i.views }}</p> -->
 					</div>
 
 					{% for y in i.external %}
 						<div class="article">
 							<div class="article-img span1"><img src="{{ y.external_img }}" width="100%"></div>
 							<div class="article-details span11">
-								<p class="pub">Today.com</p>
-								<a href="{{ y.external_link }}" target=_blank class="external"><p class="article-title">{{ y.external_title }}</p></a>
-								<p class="article-date">Tue, 06 May 2014</p>
+								<p class="pub">{{ y.external_only_publisher }}</p>
+								<a href="{{ y.external_link }}" target=_blank class="external"><p class="article-title">{{ y.external_only_title }}</p></a>
+								<p class="article-date">{{ y.external_date }}</p>
 							</div>
 						</div>
 					{% endfor %}
@@ -32,15 +32,15 @@
 			<div class="main-side">
 				<div class="main-side-img"><img src="{{ i.img }}" width="100%"></div>
 				<div class="main-side-title">
-					<h3>{{ i.titles }}</h3>
+					<a href={{ i.urls }}><h3>{{ i.titles }}</h3></a>
 				</div>
 
 				{% for y in i.external|slice:":1" %}
 					<div class="article">
 						<div class="article-details span11">
-							<p class="pub">Today.com</p>
-							<a href={{ y.external_link }} target=_blank class="external"><p class="article-title">{{ y.external_title }}</p></a>
-							<p class="article-date">Tue, 06 May 2014</p>
+							<p class="pub">{{ y.external_only_publisher }}</p>
+							<a href="{{ y.external_link }}" target=_blank class="external"><p class="article-title">{{ y.external_only_title }}</p></a>
+							<p class="article-date">{{ y.external_date }}</p>
 						</div>
 					</div>
 				{% endfor %}
@@ -53,15 +53,15 @@
 					<div class="main-side">
 						<div class="main-side-img"><img src="{{ i.img }}" width="100%"></div>
 						<div class="main-side-title">
-							<h3>{{ i.titles }}</h3>
+							<a href={{ i.urls }}><h3>{{ i.titles }}</h3></a>
 						</div>
 
 						{% for y in i.external|slice:":1" %}
 							<div class="article">
 								<div class="article-details span11">
-									<p class="pub">Today.com</p>
-									<a href={{ y.external_link }} target=_blank class="external"><p class="article-title">{{ y.external_title }}</p></a>
-									<p class="article-date">Tue, 06 May 2014</p>
+									<p class="pub">{{ y.external_only_publisher }}</p>
+								<a href="{{ y.external_link }}" target=_blank class="external"><p class="article-title">{{ y.external_only_title }}</p></a>
+								<p class="article-date">{{ y.external_date }}</p>
 								</div>
 							</div>
 						{% endfor %}
@@ -79,15 +79,15 @@
 			<div class="md-img span5"><img src="{{ i.img }}" width="100%"></div>
 			<div class="md-article span7">
 			<div class="md-title">
-				<h3>{{ i.titles }}</h3>
+				<a href={{ i.urls }}><h3>{{ i.titles }}</h3></a>
 			</div>
 			{% for y in i.external|slice:":2" %}
 				<div class="article">
 					<div class="article-img span1"><img src="{{ y.external_img }}" width="100%"></div>
 					<div class="article-details span11">
-						<p class="pub">Today.com</p>
-						<a href={{ y.external_link }} target=_blank class="external"><p class="article-title">{{ y.external_title }}</p></a>
-						<p class="article-date">Tue, 06 May 2014</p>
+						<p class="pub">{{ y.external_only_publisher }}</p>
+								<a href="{{ y.external_link }}" target=_blank class="external"><p class="article-title">{{ y.external_only_title }}</p></a>
+								<p class="article-date">{{ y.external_date }}</p>
 					</div>
 				</div>
 				{% endfor %}
