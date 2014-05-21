@@ -24,7 +24,11 @@ def month():
 		stat = span.contents
 
 		summary = soup3_5[x]
-		summary_content = summary.contents
+		if (len(summary.contents) == 0):
+			result['summary'] = ''
+		else:
+			summary_content = summary.contents
+			result['summary'] = summary_content[0]
 
 		#find image link
 		link_title = urllib2.quote(title[0])
@@ -46,7 +50,7 @@ def month():
 		#print 'view increase: ' + stat[0]
 		result['views'] = stat[0]
 		#print 'summary: ' + summary_content[0]
-		result['summary'] = summary_content[0]
+		#result['summary'] = summary_content[0]
 		#print
 		count = count + 1
 		content.append(result)

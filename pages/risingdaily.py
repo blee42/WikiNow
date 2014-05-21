@@ -24,7 +24,12 @@ def daily():
 		stat = span.contents
 
 		summary = soup3_5[x]
-		summary_content = summary.contents
+		# if no summary
+		if (len(summary.contents) == 0):
+			result['summary'] = ''
+		else:
+			summary_content = summary.contents
+			result['summary'] = summary_content[0]
 
 		#find image link
 		str_title = title[0]
@@ -40,19 +45,19 @@ def daily():
 
 		result['img'] = img_url
 		
-		print 'rank: ' + str(count)
+		#print 'rank: ' + str(count)
 		result['ranks'] = str(count)
-		print 'title: ' + title[0]
+		#print 'title: ' + title[0]
 		result['titles'] = title[0]
-		print 'url: ' + link
+		#print 'url: ' + link
 		result['urls'] = link
-		print 'view increase: ' + stat[0]
+		#print 'view increase: ' + stat[0]
 		result['views'] = stat[0]
-		print 'summary: ' + summary_content[0]
-		if (len(summary_content) != 0):
-			result['summary'] = summary_content[0]
-		else:
-			result['summary'] = "Summary not available"
+		#print 'summary: ' + summary_content[0]
+		#if (len(summary_content) != 0):
+		#	result['summary'] = summary_content[0]
+		#else:
+		#	result['summary'] = "Summary not available"
 		#print
 		count = count + 1
 		content.append(result)
