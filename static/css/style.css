@@ -3,6 +3,20 @@ body {
 	font-family: Apres;
 }
 
+.divider {
+	background-color: #FFA823;
+	width: 84%;
+	height: 15px;
+	margin: 50px 100px 50px 100px;
+}
+.row-fluid {
+	overflow: hidden;
+}
+
+a, a:hover {
+	color: #414141;
+}
+
 /*navbar*/
 
 .navbar-inner {
@@ -32,8 +46,11 @@ li a {
 }
 
 .main-img {
-	height: 350px;
+	height: 380px;
 	overflow: hidden;
+	-moz-box-shadow:    1px 1px 5px 2px #ccc;
+  -webkit-box-shadow: 1px 1px 5px 2px #ccc;
+  box-shadow:         1px 1px 5px 2px #ececec;
 }
 
 .main-title {
@@ -79,19 +96,38 @@ p.article-date {
 }
 
 /* main side */
-.main-side-img {
-	height: 200px;
-	overflow: hidden;
+.main-side {
+	margin: 0 0 15px 0;
 }
+.main-side-img {
+	height: 180px;
+	overflow: hidden;
+	-moz-box-shadow:    1px 1px 5px 2px #ccc;
+  -webkit-box-shadow: 1px 1px 5px 2px #ccc;
+  box-shadow:         1px 1px 5px 2px #ececec;
+}
+.main-side-title h3 {
+	margin: 10px 0 5px 0;
+	font-family: Turnip;
+	font-style: italic;
+	font-size: 25px;
+	line-height: 28px;
+}
+
 
 /* Regular article */
 .md-img {
 	height: 200px;
 	overflow: hidden;	
+	-moz-box-shadow:    1px 1px 5px 2px #ccc;
+  -webkit-box-shadow: 1px 1px 5px 2px #ccc;
+  box-shadow:         1px 1px 5px 2px #ececec;
 }
 
 .md-title h3 {
 	margin: 0 0 10px 0;
+	font-family: Turnip;
+	font-style: italic;
 }
 
 .box {
