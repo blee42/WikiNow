@@ -16,6 +16,26 @@ def current(request):
 	outcome = grab_current.current()
 	return render(request, "test_current.html", locals())
 
+def home(request):
+	result = risingweekly.week()
+	for x in result:
+		titles_content = ''
+		x['external'] = (grab_top25.getLinks(x['titles']))
+		array = x['external']
+		
+		# get wiki categories
+		x['cat'] = wiki_category.get_wiki_category(x['titles'],array)
+
+		for y in array:
+			if "..." in y['external_title']:
+				sub_title = y['external_title'].split("...")
+			elif "-" in y['external_title']:
+				sub_title = y['external_title'].split("-")
+			titles_content = titles_content + sub_title[0].rstrip() + '. '
+		print titles_content
+		x['category'] = (test1.getCategory(titles_content))
+	return render(request, "index.html", locals())
+
 def week(request):
 	result = risingweekly.week()
 	for x in result:
