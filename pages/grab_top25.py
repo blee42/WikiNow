@@ -163,6 +163,16 @@ def getLinks(str):
 	#print img_url
 	for x in items:
 		pairs = {}
+		if "..." in x[0].text:
+			pairs['external_only_title'] = x[0].text.split("...")[0]
+			pairs['external_only_publisher'] = x[0].text.split("...")[1]
+		elif "-" in x[0].text:
+			pairs['external_only_title'] = x[0].text.split("-")[0]
+			pairs['external_only_publisher'] = x[0].text.split("-")[1]
+		#else: 
+
+		pairs['external_date'] = x[3].text
+		#print x[3].text
 		pairs['external_title'] = x[0].text
 		link = x[1].text
 		linkset = link.split(r'http://')
