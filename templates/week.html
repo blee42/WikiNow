@@ -4,6 +4,7 @@
 	<h2 style="text-align: center;">Rising Articles for This Week</h2>
 	{% for i in result %}
 	 <p>{{ i.ranks }}.<a href={{ i.urls }}>{{ i.titles }}</a> (views: {{i.views}})</p>
+     <p>(Categories: {% for z in i.category %}{{z}} {% endfor %})</p>
 	 <img src="{{ i.img}} ">
 	 <p>{{ i.summary}}</p>
 	
