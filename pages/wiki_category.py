@@ -60,7 +60,11 @@ def get_wiki_category(titleArticle, newsArray):
 
 def get_category(title):
 	cList = []
+	#title = unicode(title)
+	#title = title.encode("ascii",'ignore')
+	#sub_title = title.replace(' ', '%20')
 	url = 'http://en.wikipedia.org/w/api.php?format=json&action=query&prop=categories&titles=' + urllib2.quote(title)
+	#url = 'http://en.wikipedia.org/w/api.php?format=json&action=query&prop=categories&titles=' + title
 	result = urllib2.urlopen(url)
 	json_data = json.loads(result.read())
 	data = (json_data['query']['pages'])
