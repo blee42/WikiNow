@@ -35,7 +35,7 @@ def get_articles(current_url):
 		str_title = unicode(str_title)
 		str_title = str_title.encode("ascii",'ignore')
 		link_title = urllib2.quote(str_title)
-		iquery = 'http://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=' + link_title
+		iquery = 'http://ajax.googleapis.com/ajax/services/search/images?v=1.0&imgsz=xxlarge&q=' + link_title
 
 		img_response = urllib2.urlopen(iquery)
 		json_data = json.loads(img_response.read())
