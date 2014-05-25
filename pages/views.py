@@ -14,12 +14,8 @@ def pages(request):
 	return render(request, "index.html", locals())
 
 def home(request):
-<<<<<<< HEAD
-	result = risingdaily.daily()
-=======
-	url = 'http://tools.wmflabs.org/wikitrends/english-uptrends-this-week.html'
+	url = 'http://tools.wmflabs.org/wikitrends/english-uptrends-today.html'
 	result = grab_articles.get_articles(url)
->>>>>>> ba243939e811664ad353cc87070bfbc417a68409
 	for x in result:
 		titles_content = ''
 		x['external'] = (news_links.getLinks(x['titles']))
@@ -30,19 +26,9 @@ def home(request):
 
 		# get alchemy categories
 		for y in array:
-<<<<<<< HEAD
-			if "..." in y['external_title']:
-				sub_title = y['external_title'].split("...")
-			elif "-" in y['external_title']:
-				sub_title = y['external_title'].split("-")
-			titles_content = titles_content + sub_title[0].rstrip() + '. '
-		#print x['titles'], titles_content
-		x['category'] = (test1.getCategory(titles_content))
-=======
 			title = extract_title(y['external_title'])
 			titles_content = titles_content + title + '. '
 		x['category'] = (alchemy_category.getCategory(titles_content))
->>>>>>> ba243939e811664ad353cc87070bfbc417a68409
 	return render(request, "index.html", locals())
 
 def weekly(request):
