@@ -17,12 +17,12 @@ def current(request):
 	return render(request, "test_current.html", locals())
 
 def home(request):
-	result = risingweekly.week()
+	result = risingdaily.daily()
 	for x in result:
 		titles_content = ''
 		x['external'] = (grab_top25.getLinks(x['titles']))
 		array = x['external']
-		
+
 		# get wiki categories
 		x['cat'] = wiki_category.get_wiki_category(x['titles'],array)
 
@@ -32,7 +32,7 @@ def home(request):
 			elif "-" in y['external_title']:
 				sub_title = y['external_title'].split("-")
 			titles_content = titles_content + sub_title[0].rstrip() + '. '
-		#print titles_content
+		#print x['titles'], titles_content
 		x['category'] = (test1.getCategory(titles_content))
 	return render(request, "index.html", locals())
 
