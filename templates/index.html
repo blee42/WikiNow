@@ -12,7 +12,7 @@
 <!-- 						<p class="views">{{ i.views }}</p> -->
 					</div>
 
-					{% for y in i.external %}
+					{% for y in i.external|slice:":2" %}
 						<div class="article">
 							<div class="article-img span1"><img src="{{ y.external_img }}"></div>
 							<div class="article-details span11">
@@ -35,7 +35,7 @@
 					<a href={{ i.urls }}><h3>{{ i.titles }}</h3></a>
 				</div>
 
-				{% for y in i.external|slice:":1" %}
+				{% for y in i.external %}
 					<div class="article">
 						<div class="article-details span11">
 							<p class="pub">{{ y.external_only_publisher }}</p>
