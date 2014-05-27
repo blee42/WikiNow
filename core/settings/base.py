@@ -34,6 +34,8 @@ MANAGERS = ADMINS
 
 TIME_ZONE = 'America/Chicago'
 
+CACHE_MIDDLEWARE_SECONDS = 36000
+
 LANGUAGE_CODE = 'en-us'
 
 SITE_ID = 1
@@ -127,3 +129,4 @@ LOGGING = {
         },
     }
 }
+
