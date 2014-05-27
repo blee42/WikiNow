@@ -1,1 +1,1 @@
-web: gunicorn prd.wsgi
+web: gunicorn conf.prd.wsgi
