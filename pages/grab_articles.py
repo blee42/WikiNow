@@ -40,7 +40,11 @@ def get_articles(current_url):
 		img_response = urllib2.urlopen(iquery)
 		json_data = json.loads(img_response.read())
 		img_data = json_data['responseData']['results'][0]
+		# print img_data
+		# print
 		img_url = img_data[u'url']
+		# print img_url
+		# print
 
 		result['img'] = img_url
 		
