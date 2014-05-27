@@ -1,7 +1,7 @@
-Fabric==1.7.0
+fabric==1.7.0
 boto==2.12.0
 paramiko==1.11.0
 wsgiref==0.1.2
 Django==1.5
 django-debug-toolbar
-
+gunicorn
