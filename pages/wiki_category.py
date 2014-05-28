@@ -5,7 +5,7 @@ import copy
 
 import nltk
 nltk.data.path.append('./nltk_data')
-from nltk.corpus import stopwords
+from nltk_data.copora import stopwords
 
 def get_wiki_category(titleArticle, newsArray):
 	print titleArticle
