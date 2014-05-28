@@ -35,7 +35,7 @@
 					<a href={{ i.urls }}><h3>{{ i.titles }}</h3></a>
 				</div>
 
-				{% for y in i.external %}
+				{% for y in i.external|slice:":1" %}
 					<div class="article">
 						<div class="article-details span11">
 							<p class="pub">{{ y.external_only_publisher }}</p>
@@ -103,14 +103,12 @@
 		<div class="sidebar">
 			<h4>Most Visited</h4>
 			<div class="ranking">
-				<div class="rank">
-					<h6 class="rank-title">Snoop Dogg</h6>
-					<p class="rank-info">100000 views</p>
-				</div>
-				<div class="rank">
-					<h6 class="rank-title">Snoop Dogg</h6>
-					<p class="rank-info">100000 views</p>
-				</div>
+				{% for i in result %}
+					<div class="rank">
+						<h6 class="rank-title">{{ i.titles }}</h6>
+						<p class="rank-info">{{ i.views }}</p>
+					</div>
+				{% endfor %}
 			</div>
 		</div>
 	</div>
@@ -119,14 +117,12 @@
 		<div class="sidebar">
 			<h4>Downtrends</h4>
 			<div class="ranking">
-				<div class="rank">
-					<h6 class="rank-title">Snoop Dogg</h6>
-					<p class="rank-info">100000 views</p>
-				</div>
-				<div class="rank">
-					<h6 class="rank-title">Snoop Dogg</h6>
-					<p class="rank-info">100000 views</p>
-				</div>
+				{% for i in result %}
+					<div class="rank">
+						<h6 class="rank-title">{{ i.titles }}</h6>
+						<p class="rank-info">{{ i.views }}</p>
+					</div>
+				{% endfor %}
 			</div>
 		</div>
 	</div>
