@@ -103,14 +103,16 @@
 		<div class="sidebar">
 			<h4>Most Visited</h4>
 			<div class="ranking">
+				{% for j in most_visited %}
 				<div class="rank">
+					<h6 class="rank-title">{{ j.titles }}</h6>
+					<p class="rank-info">{{ j.views }}</p>
+				</div>
+				<!-- <div class="rank">
 					<h6 class="rank-title">Snoop Dogg</h6>
 					<p class="rank-info">100000 views</p>
-				</div>
-				<div class="rank">
-					<h6 class="rank-title">Snoop Dogg</h6>
-					<p class="rank-info">100000 views</p>
-				</div>
+				</div> -->
+				{% endfor %}
 			</div>
 		</div>
 	</div>
@@ -119,14 +121,16 @@
 		<div class="sidebar">
 			<h4>Downtrends</h4>
 			<div class="ranking">
+				{% for k in downtrends %}
 				<div class="rank">
+					<h6 class="rank-title">{{ k.titles }}</h6>
+					<p class="rank-info">{{ k.views }}</p>
+				</div>
+				<!-- <div class="rank">
 					<h6 class="rank-title">Snoop Dogg</h6>
 					<p class="rank-info">100000 views</p>
-				</div>
-				<div class="rank">
-					<h6 class="rank-title">Snoop Dogg</h6>
-					<p class="rank-info">100000 views</p>
-				</div>
+				</div> -->
+				{% endfor %}
 			</div>
 		</div>
 	</div>

@@ -27,8 +27,8 @@ def get_wiki_category(titleArticle, newsArray):
 
 	# remove stop words
 	ntitleBag = []
-	# stop = stopwords.words('english
-	stop = open('/app/pages/nltk_data/corpora/stopwords/english','rb')
+	# stop = open('/app/pages/nltk_data/corpora/stopwords/english','rb')
+	stop = open('../nltk_data/corpora/stopwords/english','rb')
 	stop_list = stop.read()
 	stop.close()
 	for i in titleBag.split():
