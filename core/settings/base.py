@@ -34,6 +34,8 @@ MANAGERS = ADMINS
 
 TIME_ZONE = 'America/Chicago'
 
+CACHE_MIDDLEWARE_SECONDS = 36000
+
 LANGUAGE_CODE = 'en-us'
 
 SITE_ID = 1
@@ -95,7 +97,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
-    'pages'
+    'pages',
+    'gunicorn'
     # 'django.contrib.admindocs',
 )
 
@@ -127,3 +130,4 @@ LOGGING = {
         },
     }
 }
+
