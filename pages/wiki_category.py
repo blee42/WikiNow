@@ -5,7 +5,7 @@ import copy
 
 # import nltk
 # nltk.data.path.append('./nltk_data')
-import nltk_data.corpora
+import pages.nltk_data
 
 def get_wiki_category(titleArticle, newsArray):
 	print titleArticle
