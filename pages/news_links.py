@@ -2,6 +2,24 @@ import urllib2, json, re, types
 import xml.etree.ElementTree as ET
 from bs4 import BeautifulSoup
 
+def getimgs(news_title):
+	print news_title
+	#print article_title
+	news_title = unicode(news_title)
+	news_title = news_title.encode("ascii",'ignore')
+	news_title = urllib2.quote(news_title)
+	#news_title = news_title.replace(' ', '%20')
+	iquery = 'http://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=' + news_title
+	img_response = urllib2.urlopen(iquery)
+	json_data = json.loads(img_response.read())
+	if (json_data['responseStatus'] == 200) and (len(json_data['responseData']['results']) > 0):
+		img_data = json_data['responseData']['results'][0]
+		img_url = img_data[u'unescapedUrl']
+	else:
+		img_url = "no img"
+	print img_url
+	return img_url
+
 # use elementtree
 def getLinks(str):
 	# ignore special characters
@@ -37,28 +55,9 @@ def getLinks(str):
 
 		# grab image of each news article
 		article_title = pairs['external_only_title']
-		print article_title
-		article_title = unicode(article_title)
-		article_title = article_title.encode("ascii",'ignore')
-		article_title = urllib2.quote(article_title)
-		iquery = 'http://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=' + article_title
-		img_response = urllib2.urlopen(iquery)
-		json_data = json.loads(img_response.read())
-		outcome = json_data['responseStatus']
-		print outcome
-		type(outcome)
-		#type(result)
-		# img_url = "no"
-		#img_data = json_data['responseData']['results'][0]
-		#img_url = img_data[u'unescapedUrl']
 
-		#
+		img_url = getimgs(article_title)
 		
-		if (json_data['responseStatus'] == 200):
-			img_data = json_data['responseData']['results'][0]
-			img_url = img_data[u'unescapedUrl']
-		else:
-			img_url = "no img"
 		#img_url = "no image"
 		pairs['external_date'] = x[3].text
 		pairs['external_title'] = x[0].text
@@ -68,5 +67,5 @@ def getLinks(str):
 		pairs['external_link'] = target_url
 		pairs['external_img'] = img_url
 		result.append(pairs)
-		print pairs['external_only_title'], pairs['external_img']
+		#print pairs['external_only_title'], pairs['external_img']
 	return (result)
