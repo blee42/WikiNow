@@ -60,5 +60,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
     'app/static/css/style.css',
-    'app/static/img'
+    'app/static/img/logo-02.png'
 )
