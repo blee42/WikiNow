@@ -23,7 +23,7 @@ def get_wiki_category(titleArticle, newsArray):
 		titleBag = titleBag + titleOnly.lower()			
 
 	# remove punctuation
-	titleBag = titleBag.translate(None, ".,:;`'")
+	titleBag = titleBag.lower().translate(None, ".,:;`'")
 
 	# remove stop words
 	ntitleBag = []

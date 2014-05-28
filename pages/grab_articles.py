@@ -35,15 +35,21 @@ def get_articles(current_url):
 		str_title = unicode(str_title)
 		str_title = str_title.encode("ascii",'ignore')
 		link_title = urllib2.quote(str_title)
-		# iquery = 'http://ajax.googleapis.com/ajax/services/search/images?v=1.0&imgsz=xxlarge&q=' + link_title
-		iquery = 'http://ajax.googleapis.com/ajax/services/search/images?v=1.0&biw=922bih=670&q=' + link_title
+		iquery = 'http://ajax.googleapis.com/ajax/services/search/images?v=1.0&imgsz=xxlarge&q=' + link_title
+		# iquery = 'http://ajax.googleapis.com/ajax/services/search/images?v=1.0&biw=922bih=670&q=' + link_title
 
 		try:
 			img_response = urllib2.urlopen(iquery)
 			json_data = json.loads(img_response.read())
-			img_data = json_data['responseData']['results'][0]
-			img_url = img_data[u'url']
-			result['img'] = img_url
+
+			response = json_data['responseData']
+			if (response is None):
+				result['img'] = 'google error'		
+			else:	
+				img_data = response['results'][0]
+				img_url = img_data[u'url']
+				result['img'] = img_url
+			
 		except urllib2.URLError, e:
 			handleError(e)
 			result['img'] = 'No image available'
