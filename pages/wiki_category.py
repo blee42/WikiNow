@@ -1,7 +1,11 @@
-from nltk.corpus import stopwords
+# from nltk.corpus import stopwords
 import urllib2, json, unicodedata
 from pprint import pprint
 import copy
+
+# import nltk
+# nltk.data.path.append('./nltk_data')
+# from pages.nltk_data.corpora import stopwords
 
 def get_wiki_category(titleArticle, newsArray):
 	print titleArticle
@@ -23,9 +27,12 @@ def get_wiki_category(titleArticle, newsArray):
 
 	# remove stop words
 	ntitleBag = []
-	stop = stopwords.words('english')
+	# stop = open('/app/pages/nltk_data/corpora/stopwords/english','rb')
+	stop = open('../nltk_data/corpora/stopwords/english','rb')
+	stop_list = stop.read()
+	stop.close()
 	for i in titleBag.split():
-		if i not in stop:
+		if i not in stop_list:
 			if i not in ntitleBag:
 				ntitleBag.append(i)
 

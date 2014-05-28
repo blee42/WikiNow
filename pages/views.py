@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Page
-import grab_articles, alchemy_category, wiki_category, news_links
+import grab_articles, alchemy_category, news_links
 
 def extract_title(whole_title):
 	if "..." in whole_title:
@@ -15,14 +15,21 @@ def pages(request):
 
 def home(request):
 	url = 'http://tools.wmflabs.org/wikitrends/english-uptrends-today.html'
+	url_most_visited = 'http://tools.wmflabs.org/wikitrends/english-most-visited-this-week.html'
+	url_downtrends = 'http://tools.wmflabs.org/wikitrends/english-downtrends-this-week.html'
 	result = grab_articles.get_articles(url)
+	
+	# does not grab news articles or categories for most_visited or downtrends
+	most_visited = grab_articles.get_articles(url_most_visited)
+	downtrends = grab_articles.get_articles(url_downtrends)
+	
 	for x in result:
 		titles_content = ''
 		x['external'] = (news_links.getLinks(x['titles']))
 		array = x['external']
 
 		# get wiki categories
-		x['cat'] = wiki_category.get_wiki_category(x['titles'],array)
+		# x['cat'] = wiki_category.get_wiki_category(x['titles'],array)
 
 		# get alchemy categories
 		for y in array:
@@ -40,7 +47,7 @@ def weekly(request):
 		array = x['external']
 		
 		# get wiki categories
-		x['cat'] = wiki_category.get_wiki_category(x['titles'],array)
+		# x['cat'] = wiki_category.get_wiki_category(x['titles'],array)
 
 		# get alchemy categories
 		for y in array:
@@ -59,7 +66,7 @@ def daily(request):
 		array = x['external']
 
 		# get wiki categories
-		x['cat'] = wiki_category.get_wiki_category(x['titles'],array)
+		# x['cat'] = wiki_category.get_wiki_category(x['titles'],array)
 
 		# get alchemy categories
 		for y in array:
@@ -77,7 +84,7 @@ def monthly(request):
 		array = x['external']
 
 		# get wiki categories
-		x['cat'] = wiki_category.get_wiki_category(x['titles'],array)
+		# x['cat'] = wiki_category.get_wiki_category(x['titles'],array)
 
 		# get alchemy categories
 		for y in array:

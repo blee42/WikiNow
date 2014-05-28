@@ -97,7 +97,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
-    'pages'
+    'pages',
+    'gunicorn'
     # 'django.contrib.admindocs',
 )
 
