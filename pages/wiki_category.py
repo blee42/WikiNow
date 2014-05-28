@@ -3,9 +3,9 @@ import urllib2, json, unicodedata
 from pprint import pprint
 import copy
 
-import nltk
-nltk.data.path.append('./nltk_data')
-from nltk_data.copora import stopwords
+# import nltk
+# nltk.data.path.append('./nltk_data')
+import nltk_data.corpora
 
 def get_wiki_category(titleArticle, newsArray):
 	print titleArticle
