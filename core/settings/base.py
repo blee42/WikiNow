@@ -98,7 +98,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'pages',
-    'gunicorn'
+    'gunicorn',
+    'storages'
     # 'django.contrib.admindocs',
 )
 
