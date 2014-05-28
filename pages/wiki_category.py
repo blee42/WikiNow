@@ -1,7 +1,11 @@
-from nltk.corpus import stopwords
+# from nltk.corpus import stopwords
 import urllib2, json, unicodedata
 from pprint import pprint
 import copy
+
+import nltk
+nltk.data.path.append('./nltk_data')
+from nltk.corpus import stopwords
 
 def get_wiki_category(titleArticle, newsArray):
 	print titleArticle
