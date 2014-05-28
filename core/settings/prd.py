@@ -11,6 +11,8 @@ sys.path.append(
 )
 from django_settings import *
 
+AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 STATIC_URL = 'https://s3.amazonaws.com/media.knightlab.com/{{ project_name }}/'
 DEBUG = False
 ALLOWED_HOSTS = [
@@ -59,4 +61,6 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
+    # 'app/static/css/style.css',
+    # 'app/static/img/logo-02.png',
 )

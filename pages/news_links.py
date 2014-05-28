@@ -1,9 +1,10 @@
-import urllib2, json, re, types
+import urllib2, json, re, types, unicodedata
 import xml.etree.ElementTree as ET
 from bs4 import BeautifulSoup
 
 def getimgs(news_title):
-	print news_title
+	# print news_title
+	# print
 	#print article_title
 	news_title = unicode(news_title)
 	news_title = news_title.encode("ascii",'ignore')
@@ -17,7 +18,7 @@ def getimgs(news_title):
 		img_url = img_data[u'unescapedUrl']
 	else:
 		img_url = "no img"
-	print img_url
+	# print img_url
 	return img_url
 
 # use elementtree
@@ -56,7 +57,9 @@ def getLinks(str):
 		# grab image of each news article
 		article_title = pairs['external_only_title']
 
-		img_url = getimgs(article_title)
+		title = make_ascii(article_title)
+		title_normal = title.translate(None, ".,:;`'")
+		img_url = getimgs(title_normal)
 		
 		#img_url = "no image"
 		pairs['external_date'] = x[3].text
@@ -69,3 +72,9 @@ def getLinks(str):
 		result.append(pairs)
 		#print pairs['external_only_title'], pairs['external_img']
 	return (result)
+
+def make_ascii(s):
+	if isinstance(s, str):
+		return s
+	elif isinstance(s, unicode):
+		return unicodedata.normalize('NFKD', s).encode('ascii', 'ignore')

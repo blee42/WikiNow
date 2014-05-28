@@ -16,9 +16,9 @@
 						<div class="article">
 							<div class="article-img span1"><img src="{{ y.external_img }}"></div>
 							<div class="article-details span11">
-								<p class="pub">{{ y.external_only_publisher }}</p>
+								{# <p class="pub">{{ y.external_only_publisher }}</p> #}
 								<a href="{{ y.external_link }}" target=_blank class="external"><p class="article-title">{{ y.external_only_title }}</p></a>
-								<p class="article-date">{{ y.external_date }}</p>
+								<p class="article-date">{{ y.external_only_publisher }} // {{ y.external_date }}</p>
 							</div>
 						</div>
 					{% endfor %}
@@ -37,10 +37,11 @@
 
 				{% for y in i.external|slice:":1" %}
 					<div class="article">
-						<div class="article-details span11">
-							<p class="pub">{{ y.external_only_publisher }}</p>
+						<div class="article-img span2"><img src="{{ y.external_img }}" width="100%"></div>
+						<div class="article-details span10">
+							{# <p class="pub">{{ y.external_only_publisher }}</p> #}
 							<a href="{{ y.external_link }}" target=_blank class="external"><p class="article-title">{{ y.external_only_title }}</p></a>
-							<p class="article-date">{{ y.external_date }}</p>
+							<p class="article-date">{{ y.external_only_publisher }} // {{ y.external_date }}</p>
 						</div>
 					</div>
 				{% endfor %}
@@ -58,10 +59,11 @@
 
 						{% for y in i.external|slice:":1" %}
 							<div class="article">
+								<div class="article-img span1"><img src="{{ y.external_img }}" width="100%"></div>
 								<div class="article-details span11">
-									<p class="pub">{{ y.external_only_publisher }}</p>
+									{# <p class="pub">{{ y.external_only_publisher }}</p> #}
 								<a href="{{ y.external_link }}" target=_blank class="external"><p class="article-title">{{ y.external_only_title }}</p></a>
-								<p class="article-date">{{ y.external_date }}</p>
+								<p class="article-date">{{ y.external_only_publisher }} // {{ y.external_date }}</p>
 								</div>
 							</div>
 						{% endfor %}
@@ -87,9 +89,9 @@
 				<div class="article">
 					<div class="article-img span1"><img src="{{ y.external_img }}" width="100%"></div>
 					<div class="article-details span11">
-						<p class="pub">{{ y.external_only_publisher }}</p>
+						{# <p class="pub">{{ y.external_only_publisher }}</p> #}
 								<a href="{{ y.external_link }}" target=_blank class="external"><p class="article-title">{{ y.external_only_title }}</p></a>
-								<p class="article-date">{{ y.external_date }}</p>
+								<p class="article-date">{{ y.external_only_publisher }} // {{ y.external_date }}</p>
 					</div>
 				</div>
 				{% endfor %}
