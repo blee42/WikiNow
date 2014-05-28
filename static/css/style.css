@@ -39,7 +39,7 @@ hr {
 
 .tagline {
 	font-style: italic;
-	color: #B4B5B5;
+	color: #414141;
 	margin: 60px 0px 20px 20px !important;
 	border-bottom: 1px solid #EF4D2F;
 	/*width: 100%;*/
@@ -59,7 +59,7 @@ li a {
 /*main*/
 
 .main {
-	border-bottom: 1px solid #ececec;
+	/*border-bottom: 1px solid #ececec;*/
 	padding: 0 0 30px 0;
 }
 
@@ -79,7 +79,7 @@ li a {
 	font-family: 'Playfair Display', serif;
 	font-size: 40px !important;
 	font-weight: 700;
-	margin: 5px 0 20px 0;
+	margin: 30px 0 20px 0;
 }
 
 .article {
@@ -111,7 +111,8 @@ p.article-title {
 
 p.article-date {
 	font-size: 10px;
-	margin: -8px 0 5px 0;
+	margin: -4px 0 5px 0;
+	line-height: 12px;
 }
 
 /* main side */
@@ -208,13 +209,15 @@ span.num {
 }
 
 h6.rank-title {
-	padding: 0;
+	padding: 10px 0 10px 0;
 	text-align: center;
-	font-family: Turnip;
-	font-style: italic;
-	line-height: 50px;
+	font-family: 'Open Sans', sans-serif;
+	/*font-style: italic;*/
+	font-weight: 600;
+	line-height: 18px;
 	color: #414141;
 	margin: 0;
+	text-transform: capitalize;
 }
 
 .rank-info {
@@ -247,4 +250,7 @@ h6.rank-title {
 	}
 }
 @media screen and (max-width: 500px) {
+	.article-img {
+		display: none;
+	}
 }
