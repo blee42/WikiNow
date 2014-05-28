@@ -10,7 +10,7 @@
   <!-- Optional: Knight Lab webfonts -->
   <link href="//cloud.webtype.com/css/d4767ecb-457a-4677-8761-72f890add836.css" rel="stylesheet" type="text/css">
   <!-- Note: You must include the Blueline CDN stylesheet -->
-  <link href='http://fonts.googleapis.com/css?family=Crimson+Text:700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Playfair+Display:700,900' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="//cdn.knightlab.com/libs/blueline/latest/css/blueline.min.css">
   <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
   {# Google Analytics: don't mess with this stuff #}
@@ -42,13 +42,13 @@
   <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container-fluid">
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+      {# <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-      </a>
-        <a href="/" class="brand"><img src="{% static "img/logo.png" %}" width="200"><span class="tagline">What's trending on Wikipedia now</span></a>
-        <div class="nav-collapse navbar-responsive-collapse collapse" style="height: 0px;">
+      </a> #}
+        <a href="/" class="brand"><img src="{% static 'img/logo-02.png' %}" width="200"><span class="tagline">What's trending on Wikipedia now</span></a>
+{#         <div class="nav-collapse navbar-responsive-collapse collapse" style="height: 0px;">
           <ul class="nav">
             <!-- <li><a href="#">Link</a></li> 
             <li><a href="#">Link</a></li> 
@@ -57,7 +57,7 @@
           </ul>
           <ul class="nav pull-right">
           </ul>
-        </div><!-- /.nav-collapse -->
+        </div> #}<!-- /.nav-collapse -->
       </div>
     </div><!-- /navbar-inner -->
   </div>
