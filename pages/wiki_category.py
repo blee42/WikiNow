@@ -29,9 +29,10 @@ def get_wiki_category(titleArticle, newsArray):
 	ntitleBag = []
 	# stop = stopwords.words('english
 	stop = open('../nltk_data/corpora/stopwords/english','rb')
-	# print stop
+	stop_list = stop.read()
+	stop.close()
 	for i in titleBag.split():
-		if i not in stop:
+		if i not in stop_list:
 			if i not in ntitleBag:
 				ntitleBag.append(i)
 
