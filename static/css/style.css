@@ -6,10 +6,10 @@ body {
 }
 
 .divider {
-	background-color: #54A4DA;
+	background-color: #414141;
 	width: 84%;
-	height: 7px;
-	margin: 50px 100px 50px 100px;
+	height: 3px;
+	margin: 25px 100px 25px 100px;
 }
 .row-fluid {
 	overflow: hidden;
@@ -20,7 +20,7 @@ a, a:hover {
 }
 
 hr {
-	border-color: #54A4DA;
+	border-color: #414141;
 }
 
 /*navbar*/
@@ -41,10 +41,10 @@ hr {
 	font-style: italic;
 	color: #B4B5B5;
 	margin: 60px 0px 20px 20px !important;
-	border-bottom: 1px solid #54A4DA;
-	width: 100%;
+	border-bottom: 1px solid #EF4D2F;
+	/*width: 100%;*/
 	font-size: 16px;
-	padding-right: 515px;
+	/*padding-right: 30%;*/
 }
 
 li a {
@@ -59,6 +59,8 @@ li a {
 /*main*/
 
 .main {
+	border-bottom: 1px solid #ececec;
+	padding: 0 0 30px 0;
 }
 
 .main-img {
@@ -158,6 +160,7 @@ p.article-date {
 	width: 120% !important;
 	min-width: 300px;
 	vertical-align: middle;
+	margin: -10px 0 0 -20px;
 }
 
 .md-title h3 {
@@ -168,21 +171,23 @@ p.article-date {
 }
 
 .box {
-	margin: 0 0 30px 0;
+	margin: 30px 0 20px 0;
 	overflow: hidden;
 }
 
 /* sidebar */
 .sidebar {
+	margin-bottom: 30px;
 }
 
 .sidebar h4 {
-	/*color: #fff;*/
+	color: #fff;
 	text-align: center;
 	font-family: 'Playfair Display', serif;
 	font-weight: 700;
-	padding: 10px 0 0 0;
-	border-bottom: 3px solid #414141;s
+	padding: 10px 0 10px 0;
+	background-color: #EF4D2F;
+	/*border-bottom: 3px solid #EF4D2F;*/
 }
 
 /*left rail*/
@@ -221,4 +226,25 @@ h6.rank-title {
 
 .active {
 	background-color: #E9EAEB;
+}
+
+@media screen and (max-width: 960px) {
+}
+@media screen and (max-width: 768px) {
+	#content {
+		margin-top: 0 !important;
+	}
+	.brand {
+		padding: 20px 0 0 20px !important;
+	}
+	.tagline {
+		display: block;
+		margin: 10px 0 0 0 !important;
+		/*display: none;*/
+	}
+	.divider {
+		margin: 0 0 0 5%;
+	}
+}
+@media screen and (max-width: 500px) {
 }
