@@ -114,7 +114,7 @@ p.article-date {
 
 /* main side */
 .main-side {
-	margin: 0 0 15px 0;
+	margin: 0 0 35px 0;
 }
 .main-side-img {
 	width: 100%;
@@ -174,22 +174,21 @@ p.article-date {
 
 /* sidebar */
 .sidebar {
-	background-color: #414141;
 }
 
 .sidebar h4 {
-	color: #fff;
+	/*color: #fff;*/
 	text-align: center;
-	font-family: Apres;
-	font-weight: lighter;
-	letter-spacing: 1px;
+	font-family: 'Playfair Display', serif;
+	font-weight: 700;
 	padding: 10px 0 0 0;
+	border-bottom: 3px solid #414141;s
 }
 
 /*left rail*/
 .ranking {
 	background-color: #F5F6F7;
-	height: 500px;
+	margin-bottom: 10px;
 }
 
 .rank {
