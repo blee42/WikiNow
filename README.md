@@ -31,8 +31,8 @@ We are using the Django framework to build our website. For basic design, we are
     $ python manage.py runserver
 
 ## Authors
-* [Rebecca Lai](https://github.com/blee42) - Journalism major, Junior, Medill School of Journalism
-* [Brittany Lee](https://github.com/kklai) - Computer Science, Junior, McCormick School of Engineering
+* [Rebecca Lai](https://github.com/kklai) - Journalism major, Junior, Medill School of Journalism
+* [Brittany Lee](https://github.com/blee42) - Computer Science, Junior, McCormick School of Engineering
 * [Yuchao Zhou](https://github.com/yuchaozh) - Computer Science, master, McCormick School of Engineering
 
 ## Acknowledgements
