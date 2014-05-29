@@ -7,28 +7,28 @@ We are using the Django framework to build our website. For basic design, we are
 
 ## Installation and Usage
 
-Install [virtualenvwrapper](http://virtualenvwrapper.readthedocs.org/en/latest/) first
+  Install [virtualenvwrapper](http://virtualenvwrapper.readthedocs.org/en/latest/) first
 
-# Download WikiNow source code
-$ git clone git@github.com:blee42/WikiNow.git
+    # Download WikiNow source code
+    $ git clone git@github.com:blee42/WikiNow.git
 
-# Enter into project directory
-$ cd WikiNow
+    # Enter into project directory
+    $ cd WikiNow
 
-# Activate the virtual environment 
-$ mkvirtualenv wikinow
-# if prompt error:"-bash: mkvirtualenv: command not found"
-$ source "/usr/local/bin/virtualenvwrapper.sh"
-$ mkvirtualenv wikinow
+    # Activate the virtual environment 
+    $ mkvirtualenv wikinow
+    # if prompt error:"-bash: mkvirtualenv: command not found"
+    $ source "/usr/local/bin/virtualenvwrapper.sh"
+    $ mkvirtualenv wikinow
 
-# Activate virtual environment
-$ workon wikinow
+    # Activate virtual environment
+    $ workon wikinow
 
-# Install requirements
-$ pip install -r requirements.txt
+    # Install requirements
+    $ pip install -r requirements.txt
 
-# Start the development server
-$ python manage.py runserver
+    # Start the development server
+    $ python manage.py runserver
 
 ## Authors
 * [Rebecca Lai](https://github.com/blee42) - Journalism major, Junior, Medill School of Journalism
@@ -36,4 +36,4 @@ $ python manage.py runserver
 * [Yuchao Zhou](https://github.com/yuchaozh) - Computer Science, master, McCormick School of Engineering
 
 ## Acknowledgements
-* [Johan Gunnarsson](http://http://johan.gunnarsson.name/) - built the [Wikitrends](http://tools.wmflabs.org/wikitrends/english-uptrends-this-week.html) as our source data
+* [Johan Gunnarsson](http://http://johan.gunnarsson.name/) - Built the [Wikitrends](http://tools.wmflabs.org/wikitrends/english-uptrends-this-week.html) as our source data
