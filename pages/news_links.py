@@ -63,10 +63,10 @@ def getLinks(str, getOrNot):
 		title_normal = title.translate(None, ".,:;`'")
 		if (getOrNot == "true"):
 			img_url = getimgs(title_normal)
-			print "true"
+			#print "true"
 		else:
 			img_url = "no img"
-			print "false"
+			#print "false"
 		
 		
 		#img_url = "no image"

@@ -20,6 +20,8 @@ import json, requests
 # 	return category
 
 def getCategory(demo_text):
+	demo_text = unicode(demo_text)
+	demo_text = demo_text.encode("ascii",'ignore')
 	#print demo_text
 	category = []
 	headers = {'content-type': 'application/x-www-form-urlencoded'}
