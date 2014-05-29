@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     # url(r'^{{ project_name }}/', include('{{ project_name }}.foo.urls')),
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     # url(r'^$', TemplateView.as_view(template_name='index.html')),
+    (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
     url(r'^$', 'pages.views.home', name='home'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'pages.views.pages', name='pages'),
@@ -19,4 +20,5 @@ urlpatterns = patterns('',
     url(r'^pages/', 'pages.views.pages', name='pages'),
     url(r'^daily/', 'pages.views.daily', name='daily'),
     url(r'^monthly/', 'pages.views.monthly', name='monthly')
-) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+)
+# ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
