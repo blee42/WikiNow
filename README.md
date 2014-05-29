@@ -1,21 +1,9 @@
-README file for {{ project_name }}
+## [WikiNow](http://testwikinow.herokuapp.com/) - What's happening on Wikipedia
+WikiNow builds a "front page" for Wikipedia. It shows trending articles on Wikipedia. In the front page it will show a lead story, and some secondary stories, images and news links. There are also sidebars for downtrends and most visited pages. People can discover what is interesting to people on the internet, what is trending, what is dropping in popularity and stumble upon news articles that interests them. External news links can serve the purpose of showing the reason why a certain page is popular and the categories provide context as well. WikiNow is the news front page for the Wikipedia community.
 
-###USAGE
+We grabbed uptrends articles (daily, weekly, monthly), most visited articles (weekly), and downtrends articles (weekly) from [Wikitrends](http://tools.wmflabs.org/wikitrends/english-uptrends-this-week.html). The visual experience is enhanced with better images from Google, external news links, and category for each article. 
 
-Create a new Django project using this template:
-
-    django-admin.py startproject --template=https://github.com/NUKnightLab/django-project-template/archive/master.zip <project_name>
-
-Delete this USAGE section after creating the project. The remainder of this
-README is for the created project.
-
-
-###REQUIREMENTS
-
-[virtualenvwrapper](http://virtualenvwrapper.readthedocs.org/en/latest/install.html)
-
-
-###DEVELOPMENT
+## Installation and Usage
     
     # Change into project directory
     cd wikinow
@@ -29,9 +17,6 @@ README is for the created project.
     
     # Install requirements
     pip install -r requirements.txt
-    
-    # Setup
-    python manage.py syncdb
     
     # Start the development server
     python manage.py runserver
