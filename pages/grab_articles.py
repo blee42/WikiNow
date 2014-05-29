@@ -41,7 +41,7 @@ def get_articles(current_url):
 		try:
 			img_response = urllib2.urlopen(iquery)
 			json_data = json.loads(img_response.read())
-
+			print json_data['responseStatus']
 			response = json_data['responseData']
 			if (response is None):
 				result['img'] = 'google error'		

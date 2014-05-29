@@ -25,7 +25,7 @@ def home(request):
 	
 	for x in result:
 		titles_content = ''
-		x['external'] = (news_links.getLinks(x['titles']))
+		x['external'] = (news_links.getLinks(x['titles'], "true"))
 		array = x['external']
 
 		# get wiki categories
@@ -43,7 +43,7 @@ def weekly(request):
 	result = grab_articles.get_articles(url)
 	for x in result:
 		titles_content = ''
-		x['external'] = (news_links.getLinks(x['titles']))
+		x['external'] = (news_links.getLinks(x['titles'], "false"))
 		array = x['external']
 		
 		# get wiki categories
@@ -62,7 +62,7 @@ def daily(request):
 	result = grab_articles.get_articles(url)
 	for x in result:
 		titles_content = ''
-		x['external'] = (news_links.getLinks(x['titles']))
+		x['external'] = (news_links.getLinks(x['titles'], "false"))
 		array = x['external']
 
 		# get wiki categories
@@ -80,7 +80,7 @@ def monthly(request):
 	result = grab_articles.get_articles(url)
 	for x in result:
 		titles_content = ''
-		x['external'] = (news_links.getLinks(x['titles']))
+		x['external'] = (news_links.getLinks(x['titles'], "false"))
 		array = x['external']
 
 		# get wiki categories

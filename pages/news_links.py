@@ -11,8 +11,10 @@ def getimgs(news_title):
 	news_title = urllib2.quote(news_title)
 	#news_title = news_title.replace(' ', '%20')
 	iquery = 'http://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=' + news_title
-	img_response = urllib2.urlopen(iquery)
+	request = urllib2.Request(iquery, None, {'Referer': 'localhost:8000'})
+	img_response = urllib2.urlopen(request)
 	json_data = json.loads(img_response.read())
+	#print json_data['responseStatus']
 	if (json_data['responseStatus'] == 200) and (len(json_data['responseData']['results']) > 0):
 		img_data = json_data['responseData']['results'][0]
 		img_url = img_data[u'unescapedUrl']
@@ -22,7 +24,7 @@ def getimgs(news_title):
 	return img_url
 
 # use elementtree
-def getLinks(str):
+def getLinks(str, getOrNot):
 	# ignore special characters
 	str = unicode(str);
 	str = str.encode("ascii",'ignore');
@@ -59,7 +61,13 @@ def getLinks(str):
 
 		title = make_ascii(article_title)
 		title_normal = title.translate(None, ".,:;`'")
-		img_url = getimgs(title_normal)
+		if (getOrNot == "true"):
+			img_url = getimgs(title_normal)
+			print "true"
+		else:
+			img_url = "no img"
+			print "false"
+		
 		
 		#img_url = "no image"
 		pairs['external_date'] = x[3].text

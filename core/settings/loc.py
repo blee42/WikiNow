@@ -28,8 +28,8 @@ INTERNAL_IPS = ('127.0.0.1',)
 MIDDLEWARE_CLASSES += \
             (
              'debug_toolbar.middleware.DebugToolbarMiddleware', 
-             'django.middleware.cache.UpdateCacheMiddleware',
-             'django.middleware.common.CommonMiddleware',
-             'django.middleware.cache.FetchFromCacheMiddleware',
+             #'django.middleware.cache.UpdateCacheMiddleware',
+             #'django.middleware.common.CommonMiddleware',
+             #'django.middleware.cache.FetchFromCacheMiddleware',
              )
 #CACHE_BACKEND = 'file:///var/tmp/django_cache'
