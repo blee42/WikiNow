@@ -9,25 +9,25 @@ We are using the Django framework to build our website. For basic design, we are
 
   Install [virtualenvwrapper](http://virtualenvwrapper.readthedocs.org/en/latest/) first
 
-    # Download WikiNow source code
+    Download WikiNow source code
     $ git clone git@github.com:blee42/WikiNow.git
 
-    # Enter into project directory
+    Enter into project directory
     $ cd WikiNow
 
-    # Activate the virtual environment 
+    Activate the virtual environment 
     $ mkvirtualenv wikinow
-    # if prompt error:"-bash: mkvirtualenv: command not found"
+    If prompt error:"-bash: mkvirtualenv: command not found"
     $ source "/usr/local/bin/virtualenvwrapper.sh"
     $ mkvirtualenv wikinow
 
-    # Activate virtual environment
+    Activate virtual environment
     $ workon wikinow
 
-    # Install requirements
+    Install requirements
     $ pip install -r requirements.txt
 
-    # Start the development server
+    Start the development server
     $ python manage.py runserver
 
 ## Authors
