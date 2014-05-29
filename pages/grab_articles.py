@@ -36,11 +36,14 @@ def get_articles(current_url):
 		str_title = str_title.encode("ascii",'ignore')
 		link_title = urllib2.quote(str_title)
 		iquery = 'http://ajax.googleapis.com/ajax/services/search/images?v=1.0&imgsz=xxlarge&q=' + link_title
-		# iquery = 'http://ajax.googleapis.com/ajax/services/search/images?v=1.0&biw=922bih=670&q=' + link_title
+		# iquery = 'http://ajax.googleapis.com/ajax/services/search/images?v=1.0&tbs=iar:s&q=' + link_title
 
 		try:
-			img_response = urllib2.urlopen(iquery)
-			json_data = json.loads(img_response.read())
+			# img_response = urllib2.urlopen(iquery)
+			img_response = urllib2.Request(iquery, None, {'Referer': 'wikinow.herokuapp.com'})
+			response = urllib2.urlopen(img_response)
+			# json_data = json.loads(img_response.read())
+			json_data = json.loads(response.read())
 
 			response = json_data['responseData']
 			if (response is None):
