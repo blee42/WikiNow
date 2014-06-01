@@ -107,21 +107,27 @@
 
 	<div class="span3">
 		<div class="sidebar">
-			<h4>Most Visited</h4>
-			<div class="ranking">
-				{% for j in most_visited %}
-				<div class="rank">
-					<h6 class="rank-title">{{ j.titles }}</h6>
-					<p class="rank-info">{{ j.views }}</p>
-				</div>
-				{% endfor %}
+			<div class="sidebar-head">
+				<h4>Most Visited</h4>
+				<p>on Wikipedia this week</p>
 			</div>
+		<div class="ranking">
+			{% for j in most_visited %}
+			<div class="rank">
+				<h6 class="rank-title">{{ j.titles }}</h6>
+				<p class="rank-info">{{ j.views }}</p>
+			</div>
+			{% endfor %}
 		</div>
 	</div>
+</div>
 	<br>
 	<div class="span3">
 		<div class="sidebar">
-			<h4>Downtrends</h4>
+			<div class="sidebar-head">
+				<h4>Downtrends</h4>
+				<p>on Wikipedia this week</p>
+			</div>
 			<div class="ranking">
 				{% for k in downtrends %}
 				<div class="rank">
@@ -132,6 +138,10 @@
 			</div>
 		</div>
 	</div>
+
+</div>
+
+<div class="row-fluid" id="about">
 
 </div>
 

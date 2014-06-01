@@ -58,6 +58,12 @@ hr {
 	/*padding-right: 30%;*/
 }
 
+.navbar .nav.pull-right {
+	margin-right: 140px;
+	margin-top: 60px;
+	color: #414141;
+}
+
 li a {
 	font-size: 10px;
 }
@@ -196,14 +202,21 @@ p.article-date {
 	margin-bottom: 30px;
 }
 
-.sidebar h4 {
+.sidebar-head {
+	padding: 1px 0 0px 0;
+	background-color: #EF4D2F;
 	color: #fff;
 	text-align: center;
+}
+.sidebar-head h4 {
 	font-family: 'Playfair Display', serif;
 	font-weight: 700;
-	padding: 10px 0 10px 0;
-	background-color: #EF4D2F;
-	/*border-bottom: 3px solid #EF4D2F;*/
+	color: #fff;
+	margin-bottom: 0;
+}
+
+.sidebar-head p {
+	font-size: 12px;
 }
 
 /*left rail*/
@@ -263,6 +276,12 @@ h6.rank-title {
 	}
 	.divider {
 		margin: 0 0 0 5%;
+	}
+	.md-article {
+		margin: 15px 0 0 0;
+	}
+	.article-img {
+		margin: 0 0 8px 0;
 	}
 }
 @media screen and (max-width: 500px) {
