@@ -8,6 +8,7 @@
 				<div class="big-box">
 					<div class="main-img"><img src="{{ i.img}}" width="100%"></div>
 					<div class="main-title">
+						<span class="category">{% for z in i.category %} {{ z }} {% endfor %}</span>
 						<a href={{ i.urls }}><h3>{{ i.titles }}</h3></a>
 <!-- 						<p class="views">{{ i.views }}</p> -->
 					</div>
@@ -32,6 +33,7 @@
 			<div class="main-side">
 				<div class="main-side-img"><img src="{{ i.img }}" width="100%"></div>
 				<div class="main-side-title">
+					<span class="category">{% for z in i.category %} {{ z }} {% endfor %}</span>
 					<a href={{ i.urls }}><h3>{{ i.titles }}</h3></a>
 				</div>
 
@@ -54,6 +56,7 @@
 					<div class="main-side">
 						<div class="main-side-img"><img src="{{ i.img }}" width="100%"></div>
 						<div class="main-side-title">
+							<span class="category">{% for z in i.category %} {{ z }} {% endfor %}</span>
 							<a href={{ i.urls }}><h3>{{ i.titles }}</h3></a>
 						</div>
 
@@ -83,6 +86,7 @@
 			</div>
 			<div class="md-article span7">
 			<div class="md-title">
+				<span class="category">{% for z in i.category %} {{ z }} {% endfor %}</span>
 				<a href={{ i.urls }}><h3>{{ i.titles }}</h3></a>
 			</div>
 			{% for y in i.external|slice:":2" %}
