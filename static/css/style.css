@@ -11,6 +11,17 @@ body {
 	height: 3px;
 	margin: 25px 100px 25px 100px;
 }
+
+.category {
+	background-color: #EF4D2F;
+	color: #fff;
+	text-transform: capitalize;
+ 	padding: 5px 10px 2px 10px;
+ 	font-weight: lighter;
+ 	font-size: 12px;
+ 	margin: 5px 0 0 0;
+}
+
 .row-fluid {
 	overflow: hidden;
 }
@@ -79,7 +90,7 @@ li a {
 	font-family: 'Playfair Display', serif;
 	font-size: 40px !important;
 	font-weight: 700;
-	margin: 30px 0 20px 0;
+	margin: 0px 0 20px 0;
 }
 
 .article {
@@ -136,8 +147,12 @@ p.article-date {
 	margin-left: -25px;
 }
 
+.main-side-title {
+	margin: 15px 0 0 0;
+}
+
 .main-side-title h3 {
-	margin: 20px 0 10px 0;
+	margin: 0px 0 10px 0;
 	font-family: 'Playfair Display', serif;
 	font-weight:  700;
 	font-size: 28px;
@@ -230,6 +245,7 @@ h6.rank-title {
 .active {
 	background-color: #E9EAEB;
 }
+
 
 @media screen and (max-width: 960px) {
 }
