@@ -23,7 +23,7 @@ h3 {
  	padding: 5px 10px 2px 10px;
  	font-weight: lighter;
  	font-size: 12px;
- 	margin: 5px 0 0 0;
+ 	margin: 10px 0 0 0;
 }
 
 #about {
@@ -100,7 +100,7 @@ li a {
 	width: 100% !important;
 	min-width: 300px;
 	vertical-align: middle;
-	margin: -40px 0 0 0;
+	margin: -80px 0 0 0;
 }
 
 .main-title {
@@ -111,7 +111,7 @@ li a {
 	font-family: 'Playfair Display', serif;
 	font-size: 40px !important;
 	font-weight: 700;
-	margin: 0px 0 20px 0;
+	margin: 10px 0 20px 0;
 }
 
 .article {
@@ -166,6 +166,7 @@ p.article-date {
 	width: 120% !important;
 	min-width: 300px;
 	margin-left: -25px;
+	margin-top: -80px;
 }
 
 .main-side-title {
@@ -173,7 +174,7 @@ p.article-date {
 }
 
 .main-side-title h3 {
-	margin: 0px 0 10px 0;
+	margin: 10px 0 15px 0;
 	font-family: 'Playfair Display', serif;
 	font-weight:  700;
 	font-size: 28px;
