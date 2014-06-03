@@ -92,8 +92,14 @@ li a {
 	height: 420px;
 	overflow: hidden;
 	-moz-box-shadow:    1px 1px 5px 2px #ccc;
-  -webkit-box-shadow: 1px 1px 5px 2px #ccc;
-  box-shadow:         1px 1px 5px 2px #ececec;
+  	-webkit-box-shadow: 1px 1px 5px 2px #ccc;
+  	box-shadow:         1px 1px 5px 2px #ececec;
+}
+
+.background-img {
+	background-repeat: no-repeat;
+  	background-size: cover;
+  	background-position: center top;
 }
 
 .main-img img {

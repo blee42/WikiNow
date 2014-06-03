@@ -44,7 +44,7 @@ def get_articles(current_url):
 			#print json_data['responseStatus']
 			response = json_data['responseData']
 			if (response is None):
-				result['img'] = 'google error'		
+				result['img'] = 'http://www.mountainmansocialmedia.com/_site/wp-content/themes/juiced/img/thumbnail-default.jpg'	
 			else:	
 				img_data = response['results'][0]
 				img_url = img_data[u'url']
@@ -52,7 +52,7 @@ def get_articles(current_url):
 			
 		except urllib2.URLError, e:
 			handleError(e)
-			result['img'] = 'No image available'
+			result['img'] = 'http://www.mountainmansocialmedia.com/_site/wp-content/themes/juiced/img/thumbnail-default.jpg'
 		
 		
 		

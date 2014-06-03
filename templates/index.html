@@ -6,7 +6,8 @@
 		{% if forloop.counter == 1 %}
 			<div class="main span7 offset1">
 				<div class="big-box">
-					<div class="main-img"><img src="{{ i.img}}" width="100%"></div>
+					<div class="main-img background-img" style="background-image:url('{{ i.img }}');"></div>
+					<!-- <img src="{{ i.img}}" width="100%"> -->
 					<div class="main-title">
 						<span class="category">{% for z in i.category %} {{ z }} {% endfor %}</span>
 						<a href={{ i.urls }}><h3>{{ i.titles }}</h3></a>
@@ -31,7 +32,8 @@
 		{% if forloop.counter == 2 %}
 		<div class="span3">
 			<div class="main-side">
-				<div class="main-side-img"><img src="{{ i.img }}" width="100%"></div>
+				<div class="main-side-img background-img" style="background-image:url('{{ i.img }}');"></div>
+				<!-- <img src="{{ i.img }}" width="100%"> -->
 				<div class="main-side-title">
 					<span class="category">{% for z in i.category %} {{ z }} {% endfor %}</span>
 					<a href={{ i.urls }}><h3>{{ i.titles }}</h3></a>
@@ -54,7 +56,8 @@
 			{% if forloop.counter == 3 %}
 				<div class="span3">
 					<div class="main-side">
-						<div class="main-side-img"><img src="{{ i.img }}" width="100%"></div>
+						<div class="main-side-img background-img" style="background-image:url('{{ i.img }}');"></div>
+						<!-- <img src="{{ i.img }}" width="100%"> -->
 						<div class="main-side-title">
 							<span class="category">{% for z in i.category %} {{ z }} {% endfor %}</span>
 							<a href={{ i.urls }}><h3>{{ i.titles }}</h3></a>
@@ -81,9 +84,10 @@
 	<div class="span7 offset1">
 		{% for i in result|slice:"4:" %}
 			<div class="box">
-			<div class="md-img span5">
-				<img src="{{ i.img }}" />
+			<div class="md-img span5 background-img" style="background-image:url('{{ i.img }}');">
+				
 			</div>
+			<!-- <img src="{{ i.img }}" /> -->
 			<div class="md-article span7">
 			<div class="md-title">
 				<span class="category">{% for z in i.category %} {{ z }} {% endfor %}</span>
