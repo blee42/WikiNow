@@ -1,4 +1,4 @@
-import urllib2, re, json
+import urllib2, re, json, copy
 import xml.etree.ElementTree as ET
 from bs4 import BeautifulSoup
 
@@ -44,11 +44,15 @@ def get_articles(current_url):
 			#print json_data['responseStatus']
 			response = json_data['responseData']
 			if (response is None):
-				result['img'] = 'http://www.mountainmansocialmedia.com/_site/wp-content/themes/juiced/img/thumbnail-default.jpg'	
+				result['img'] = 'http://www.mountainmansocialmedia.com/_site/wp-content/themes/juiced/img/thumbnail-default.jpg'
+				print 'error: Google Image API'	
 			else:	
-				img_data = response['results'][0]
-				img_url = img_data[u'url']
-				result['img'] = img_url
+				for img_data in response['results']:
+					img_url = img_data[u'url']
+					img_url_check = copy.deepcopy(img_url)
+					if (img_url_check[-3:] == 'jpg') or (img_url_check[-3:] == 'png'):
+						result['img'] = img_url
+						break
 			
 		except urllib2.URLError, e:
 			handleError(e)

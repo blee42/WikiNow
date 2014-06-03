@@ -118,7 +118,7 @@
 		<div class="ranking">
 			{% for j in most_visited %}
 			<div class="rank">
-				<h6 class="rank-title">{{ j.titles }}</h6>
+				<a href="{{ j.urls }}"><h6 class="rank-title">{{ j.titles }}</h6></a>
 				<p class="rank-info">{{ j.views }}</p>
 			</div>
 			{% endfor %}
@@ -135,7 +135,7 @@
 			<div class="ranking">
 				{% for k in downtrends %}
 				<div class="rank">
-					<h6 class="rank-title">{{ k.titles }}</h6>
+					<a href="{{ k.urls }}"><h6 class="rank-title">{{ k.titles }}</h6></a>
 					<p class="rank-info">{{ k.views }}</p>
 				</div>
 				{% endfor %}
