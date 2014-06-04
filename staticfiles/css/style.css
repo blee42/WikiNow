@@ -2,11 +2,7 @@
 
 /* base styles go here */
 body {
-	font-family: 'Open Sans', sans-serif;
-}
-h3 {
-	font-family: 'Playfair Display', serif;
-	font-weight:  700;
+	font-family: Apres;
 }
 
 .divider {
@@ -15,21 +11,6 @@ h3 {
 	height: 3px;
 	margin: 25px 100px 25px 100px;
 }
-
-.category {
-	background-color: #EF4D2F;
-	color: #fff;
-	text-transform: capitalize;
- 	padding: 5px 10px 2px 10px;
- 	font-weight: lighter;
- 	font-size: 12px;
- 	margin: 10px 0 0 0;
-}
-
-#about {
-	margin: 20px 0 60px 0;
-}
-
 .row-fluid {
 	overflow: hidden;
 }
@@ -66,12 +47,6 @@ hr {
 	/*padding-right: 30%;*/
 }
 
-.navbar .nav.pull-right {
-	margin-right: 140px;
-	margin-top: 60px;
-	color: #414141;
-}
-
 li a {
 	font-size: 10px;
 }
@@ -92,21 +67,8 @@ li a {
 	height: 420px;
 	overflow: hidden;
 	-moz-box-shadow:    1px 1px 5px 2px #ccc;
-  	-webkit-box-shadow: 1px 1px 5px 2px #ccc;
-  	box-shadow:         1px 1px 5px 2px #ececec;
-}
-
-.background-img {
-	background-repeat: no-repeat;
-  	background-size: cover;
-  	background-position: center top;
-}
-
-.main-img img {
-	width: 100% !important;
-	min-width: 300px;
-	vertical-align: middle;
-	margin: -80px 0 0 0;
+  -webkit-box-shadow: 1px 1px 5px 2px #ccc;
+  box-shadow:         1px 1px 5px 2px #ececec;
 }
 
 .main-title {
@@ -117,7 +79,7 @@ li a {
 	font-family: 'Playfair Display', serif;
 	font-size: 40px !important;
 	font-weight: 700;
-	margin: 10px 0 20px 0;
+	margin: 30px 0 20px 0;
 }
 
 .article {
@@ -172,15 +134,10 @@ p.article-date {
 	width: 120% !important;
 	min-width: 300px;
 	margin-left: -25px;
-	margin-top: -80px;
-}
-
-.main-side-title {
-	margin: 15px 0 0 0;
 }
 
 .main-side-title h3 {
-	margin: 10px 0 15px 0;
+	margin: 20px 0 10px 0;
 	font-family: 'Playfair Display', serif;
 	font-weight:  700;
 	font-size: 28px;
@@ -224,21 +181,14 @@ p.article-date {
 	margin-bottom: 30px;
 }
 
-.sidebar-head {
-	padding: 1px 0 0px 0;
-	background-color: #EF4D2F;
+.sidebar h4 {
 	color: #fff;
 	text-align: center;
-}
-.sidebar-head h4 {
 	font-family: 'Playfair Display', serif;
 	font-weight: 700;
-	color: #fff;
-	margin-bottom: 0;
-}
-
-.sidebar-head p {
-	font-size: 12px;
+	padding: 10px 0 10px 0;
+	background-color: #EF4D2F;
+	/*border-bottom: 3px solid #EF4D2F;*/
 }
 
 /*left rail*/
@@ -281,7 +231,6 @@ h6.rank-title {
 	background-color: #E9EAEB;
 }
 
-
 @media screen and (max-width: 960px) {
 }
 @media screen and (max-width: 768px) {
@@ -298,12 +247,6 @@ h6.rank-title {
 	}
 	.divider {
 		margin: 0 0 0 5%;
-	}
-	.md-article {
-		margin: 15px 0 0 0;
-	}
-	.article-img {
-		margin: 0 0 8px 0;
 	}
 }
 @media screen and (max-width: 500px) {

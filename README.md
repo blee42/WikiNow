@@ -37,3 +37,4 @@ We are using the Django framework to build our website. For basic design, we are
 
 ## Acknowledgements
 * [Johan Gunnarsson](http://johan.gunnarsson.name/) - Built the [Wikitrends](http://tools.wmflabs.org/wikitrends/english-uptrends-this-week.html) as our source data
+
