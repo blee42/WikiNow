@@ -1,5 +1,5 @@
 from alchemyapi import AlchemyAPI
-import json
+import json, requests
 
 # def getCategory(demo_text):
 # 	alchemyapi = AlchemyAPI()
