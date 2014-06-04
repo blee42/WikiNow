@@ -16,13 +16,13 @@ We are using the Django framework to build our website. For basic design, we are
     $ cd WikiNow
 
     Activate the virtual environment 
-    $ mkvirtualenv wikinow
+    $ mkvirtualenv env
     If prompt error:"-bash: mkvirtualenv: command not found"
     $ source "/usr/local/bin/virtualenvwrapper.sh"
-    $ mkvirtualenv wikinow
+    $ mkvirtualenv env
 
     Activate virtual environment
-    $ workon wikinow
+    $ source env/bin/activate
 
     Install requirements
     $ pip install -r requirements.txt
