@@ -2,7 +2,7 @@ import urllib2, re, json, copy
 import xml.etree.ElementTree as ET
 from bs4 import BeautifulSoup
 
-def get_articles(current_url):
+def get_articles(current_url, imageOrNot):
 	#response = urllib2.urlopen('http://tools.wmflabs.org/wikitrends/english-uptrends-today.html')
 	response = urllib2.urlopen(current_url)
 	html = response.read()
@@ -31,13 +31,13 @@ def get_articles(current_url):
 			result['summary'] = summary_content[0]
 
 		#find image link
-		str_title = title[0]
-		str_title = unicode(str_title)
-		str_title = str_title.encode("ascii",'ignore')
-		link_title = urllib2.quote(str_title)
-		iquery = 'http://ajax.googleapis.com/ajax/services/search/images?v=1.0&imgsz=xxlarge&q=' + link_title
-		# iquery = 'http://ajax.googleapis.com/ajax/services/search/images?v=1.0&biw=922bih=670&q=' + link_title
-
+		if (imageOrNot == "true"):
+			str_title = title[0]
+			str_title = unicode(str_title)
+			str_title = str_title.encode("ascii",'ignore')
+			link_title = urllib2.quote(str_title)
+			iquery = 'http://ajax.googleapis.com/ajax/services/search/images?v=1.0&imgsz=xxlarge&q=' + link_title
+			# iquery = 'http://ajax.googleapis.com/ajax/services/search/images?v=1.0&biw=922bih=670&q=' + link_title
 		try:
 			img_response = urllib2.urlopen(iquery)
 			json_data = json.loads(img_response.read())
@@ -57,7 +57,6 @@ def get_articles(current_url):
 		except urllib2.URLError, e:
 			handleError(e)
 			result['img'] = 'http://www.mountainmansocialmedia.com/_site/wp-content/themes/juiced/img/thumbnail-default.jpg'
-		
 		
 		
 		#print 'rank: ' + str(count)
