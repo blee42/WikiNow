@@ -8,7 +8,7 @@ import copy
 # from pages.nltk_data.corpora import stopwords
 
 def get_wiki_category(titleArticle, newsArray):
-	print titleArticle
+	# print titleArticle
 	titleBag = ''
 	for article in newsArray:
 		title = article['external_title']

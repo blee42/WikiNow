@@ -44,7 +44,7 @@ def get_articles(current_url, imageOrNot):
 				json_data = json.loads(img_response.read())
 				#print json_data['responseStatus']
 				response = json_data['responseData']
-				print json_data
+				# print json_data
 				if (response is None):
 					result['img'] = 'http://www.mountainmansocialmedia.com/_site/wp-content/themes/juiced/img/thumbnail-default.jpg'
 					print 'error: Google Image API'	
