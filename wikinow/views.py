@@ -26,7 +26,7 @@ def home(request):
 		array = x['external']
 
 		# get wiki categories
-		x['cat'] = wiki_category.get_wiki_category(x['titles'],array)
+		# x['cat'] = wiki_category.get_wiki_category(x['titles'],array)
 
 		# get alchemy categories
 		for y in array:
