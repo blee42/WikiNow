@@ -32,5 +32,5 @@ def home(request):
 		for y in array:
 			title = extract_title(y['external_title'])
 			titles_content = titles_content + title + '. '
-		x['category'] = (alchemy_category.getCategory(titles_content))
+		# x['category'] = (alchemy_category.getCategory(titles_content))
 	return render(request, 'wikinow/index.html', locals())
